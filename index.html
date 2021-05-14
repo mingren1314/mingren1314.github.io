@@ -308,6 +308,344 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-scanf问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2021-05-14T16:08:18.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/">scanf问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="解决Visual-Studio中scanf返回值被忽略问题"><a href="#解决Visual-Studio中scanf返回值被忽略问题" class="headerlink" title="解决Visual Studio中scanf返回值被忽略问题"></a>解决Visual Studio中scanf返回值被忽略问题</h1><h3 id="最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题"><a href="#最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题" class="headerlink" title="最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题"></a>最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题</h3><p><img src="https://img-blog.csdnimg.cn/20201105163700802.png#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="总结了如下几种解决方法："><a href="#总结了如下几种解决方法：" class="headerlink" title="总结了如下几种解决方法："></a>总结了如下几种解决方法：</h4><p>方法一（不建议）<br>scanf修改成 scanf_s<br>可以说scanf_s是vs编译器特有的，它认为scanf不安全，所以不允许你用而让你用它自己定义的scanf_s。<br><img src="https://img-blog.csdnimg.cn/20201105163806293.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法二<br>开头添加 #define _CRT_SECURE_NO_WARNINGS<br><img src="https://img-blog.csdnimg.cn/20201105163833265.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法三<br>开头添加 #pragma warning(disable:4996)<br><img src="https://img-blog.csdnimg.cn/20201105163850984.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法四<br>错误提示的原因在与vs中的SDL检查；关闭步骤右键单击工程文件–&gt;属性——–&gt; c/c++ ——&gt;所有选项————&gt; SDL检查选项改为 否<br><img src="https://img-blog.csdnimg.cn/20201105163912522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201105163929535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<hr>
+<p>转载：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42487738/article/details/104144201">https://blog.csdn.net/qq_42487738/article/details/104144201</a><br>2020年11月5日<br><img src="https://img-blog.csdnimg.cn/20201105164228909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-进制转换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" class="article-date">
+      <time datetime="2021-05-14T16:08:00.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><p>想要熟练的掌握进制转换 首先要明白进制的基本概念。</p>
+<h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2><p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。在这篇文章中，我们只讨论二进制、八进制、十进制以及十六进制，十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，所以二进制只由0和1组成，以此类推，x进制就是逢x进位。人类天然选择了十进制，十进制编码几乎就是数值本身。（来源：百度（<a target="_blank" rel="noopener" href="https://baike.sogou.com/v775479.htm?fromTitle=%E8%BF%9B%E5%88%B6%EF%BC%89%EF%BC%89">https://baike.sogou.com/v775479.htm?fromTitle=%E8%BF%9B%E5%88%B6））</a></p>
+<p>废话不多说，下面讲进制的转换，为了方便理解，都以一个例题来阐述转换思路</p>
+<h3 id="各个进制间的转换"><a href="#各个进制间的转换" class="headerlink" title="各个进制间的转换"></a>各个进制间的转换</h3><p>十进制-&gt;二进制（除2取余数 直到整数部分为0 然后由下而上）</p>
+<p><img src="https://img-blog.csdnimg.cn/20201019170958352.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>八进制-&gt;二进制（将三个数分开，然后除2取余数，然后从左边补齐三位，最后将最左边非0数前的0全部去掉，得到二进制）<br><img src="https://img-blog.csdnimg.cn/20201019171209264.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>十六进制-&gt;二进制（原理和二进制相同，但是区别是补齐四位 ）<br><img src="https://img-blog.csdnimg.cn/20201019171241880.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>二进制-&gt;十进制（将二进制数按权展开，相加）<br><img src="https://img-blog.csdnimg.cn/20201019171440811.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>二进制-&gt;八进制（将二进制从右向左分为三位，位置不够用0补齐，然后运算得到结果）<br><img src="https://img-blog.csdnimg.cn/20201019171502596.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>二进制-&gt;十六进制（从右向左展开分为四位，不够用0补齐，运算得到结果）<br><img src="https://img-blog.csdnimg.cn/20201019171520895.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>十进制-&gt;八进制（整数部分除以8取余数，直到无法整除。小数部分乘以8，取整，然后再将小数乘以8，取整，直到达到题目要求精度）<br><img src="https://img-blog.csdnimg.cn/20201019171600121.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>八进制-&gt;十进制（将八进制数按权展开，相加。和二进制-&gt;十进制数原理相同）<br><img src="https://img-blog.csdnimg.cn/20201019171615588.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>十进制-&gt;十六进制（整数部分除以16取余数，直到无法整除。小数部分乘以16，取整，然后再将小数乘以16，取整，直到达到题目要求精度）<br><img src="https://img-blog.csdnimg.cn/20201019171646398.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>十六进制-&gt;十进制（将十六进制数按权展开，相加）<br><img src="https://img-blog.csdnimg.cn/20201019171707574.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>八进制和十六进制互相转换，可通过二进制作为媒介，即：<br><img src="https://img-blog.csdnimg.cn/20201019171756522.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://img-blog.csdnimg.cn/20201019175555600.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>进制转换并不难，只要理清关系，做好关系图，就能完全掌握。<br>另附上两个借鉴的网址，更加全面：<br>①<a target="_blank" rel="noopener" href="https://blog.csdn.net/yuanxiang01/article/details/82503568?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160303071319725222413218%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160303071319725222413218&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-2-82503568.first_rank_ecpm_v3_pc_rank_v2&amp;utm_term=%E8%BF%9B%E5%88%B6&amp;spm=1018.2118.3001.4187">https://blog.csdn.net/yuanxiang01/article/details/82503568?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160303071319725222413218%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160303071319725222413218&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-2-82503568.first_rank_ecpm_v3_pc_rank_v2&amp;utm_term=%E8%BF%9B%E5%88%B6&amp;spm=1018.2118.3001.4187</a></p>
+<p>②<a target="_blank" rel="noopener" href="https://zhinan.sogou.com/guide/detail/?id=316513357911#step08">https://zhinan.sogou.com/guide/detail/?id=316513357911#step08</a></p>
+<p>附：<br>十六进制：一般用数字0到9和字母A到F（a到f），其中A-F表示10-15，这些称作十六进制数字。</p>
+<hr>
+<p>作者：吕文康<br>学校：山东第一医科大学<br>2020年10月19日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-自定义数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2021-05-14T16:07:49.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">自定义数据类型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="自定义数据类型"><a href="#自定义数据类型" class="headerlink" title="自定义数据类型"></a>自定义数据类型</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="结构体的声明"><a href="#结构体的声明" class="headerlink" title="结构体的声明"></a>结构体的声明</h3><h4 id="结构体的基础知识"><a href="#结构体的基础知识" class="headerlink" title="结构体的基础知识"></a>结构体的基础知识</h4><p><img src="https://img-blog.csdnimg.cn/20201114195752944.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-DAjLKbxi-1605354993141)(D:\鸣人的笔记\3\1605190661396.png)]"></p>
+<h4 id="结构的声明"><a href="#结构的声明" class="headerlink" title="结构的声明"></a>结构的声明</h4><p><img src="https://img-blog.csdnimg.cn/20201114195800972.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JALi56xp-1605354993142)(D:\鸣人的笔记\3\1605191015357.png)]"></p>
+<h4 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h4><p><img src="https://img-blog.csdnimg.cn/20201114195807615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-beYAPnlC-1605354993143)(D:\鸣人的笔记\3\1605191268790.png)]"></p>
+<h4 id="匿名结构类型"><a href="#匿名结构类型" class="headerlink" title="匿名结构类型"></a>匿名结构类型</h4><p><img src="https://img-blog.csdnimg.cn/20201114195814401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4Hf7naRO-1605354993145)(D:\鸣人的笔记\3\1605192048015.png)]"></p>
+<h3 id="结构体的自引用"><a href="#结构体的自引用" class="headerlink" title="结构体的自引用"></a>结构体的自引用</h3><p><img src="https://img-blog.csdnimg.cn/202011141958227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-WX9stVjb-1605354993146)(D:\鸣人的笔记\3\1605192575895.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114195828742.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-aLEVWpEz-1605354993146)(D:\鸣人的笔记\3\1605192883047.png)]"></p>
+<h3 id="结构体变量的定义和初始化"><a href="#结构体变量的定义和初始化" class="headerlink" title="结构体变量的定义和初始化"></a>结构体变量的定义和初始化</h3><p><img src="https://img-blog.csdnimg.cn/20201114195839274.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cmtmR1ZP-1605354993147)(D:\鸣人的笔记\3\1605193052255.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114195944941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-09HB0pFV-1605354993147)(D:\鸣人的笔记\3\1605193350880.png)]"></p>
+<h3 id="结构体内存对齐"><a href="#结构体内存对齐" class="headerlink" title="结构体内存对齐"></a>结构体内存对齐</h3><p><img src="https://img-blog.csdnimg.cn/20201114195951899.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-7i9fWFXJ-1605354993147)(D:/鸣人的笔记/3/1605234630851.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200056570.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>第一，第一个成员在偏移量为0的地方，我们假设第一个成员的内存在第二行开始</p>
+<p>第二，其他成员要对齐到对齐数的整数倍，对齐数的概念如上图，因为int a的字节是4，vs默认对齐数是8，所以在这里对齐数是4，4的整数倍是4，所以int a在第五行开始，也就是紫色的地方</p>
+<p>第三，同第二理char c2的对齐数是1，那么它就在9行，此时这个结构体一共占了9个字节</p>
+<p>最后，结构体的总大小是最大对齐数的整数倍，在这里也就是4的最大整数倍，因为此时已经占了9个了，所以是12，所以这个结构体大小是12</p>
+<p><strong>很明显，上面的规则中第四个没有使用到，那么结构体嵌套的问题是什么样呢</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200113480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>首先计算出结构体s3的大小是16</p>
+<p>结构体s4中嵌套了s3</p>
+<p>第一，结构体s4中第一个成员是char类型，占一个字节，如右上蓝色</p>
+<p>第二，嵌套的结构体对齐到自己的最大对齐数的整数倍，s3中最大对齐数是8，整数倍是8，所以从第八个位置开始，s3的大小已经计算出是16，占16个字节大小</p>
+<p>第三，double型的占8个字节，所以向下占8个位置，如右上紫色</p>
+<p>最后，可以看出一共占了32个字节（中间红色的是被浪费的）</p>
+<p>但结构体的整体大小是最大对齐数（含嵌套结构体）的整数倍，结构体s4中的最大对齐数是结构体s3，也就是16，32是16的整数倍，所以结构体s4的大小是32</p>
+<p>有的人可能会好奇，VS默认对齐数是8，那么其他编译器呢。这里如果其他编译器没有默认对齐数，那么该成员大小的最小值就是对齐数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200126212.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-NKIeUlNC-1605354993149)(D:/鸣人的笔记/3/1605245600438.png)]"></p>
+<p>那么内存对齐会浪费空间为什么要内存对齐呢</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200134401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1dErJJkG-1605354993149)(D:/鸣人的笔记/3/1605245650175.png)]"></p>
+<p>那在设计结构体的时候，既要满足对齐，又要节省空间，应如何做</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200142428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-RlNgVygD-1605354993149)(D:/鸣人的笔记/3/1605246348706.png)]"></p>
+<h3 id="修改默认对齐数"><a href="#修改默认对齐数" class="headerlink" title="修改默认对齐数"></a>修改默认对齐数</h3><p><code>#pragma pack(n)</code></p>
+<p>这里的n就是我们自己修改的默认对齐数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200152345.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-tWHg349y-1605354993149)(D:/鸣人的笔记/3/1605246822183.png)]"></p>
+<h3 id="结构体成员偏移量"><a href="#结构体成员偏移量" class="headerlink" title="结构体成员偏移量"></a>结构体成员偏移量</h3><p>offsetof是个宏，不是函数</p>
+<p>offsetof–&gt;头文件#include&lt;stddef.h&gt;</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200200638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-clqqfHT7-1605354993150)(D:/鸣人的笔记/3/1605247214687.png)]"></p>
+<h3 id="结构体传参"><a href="#结构体传参" class="headerlink" title="结构体传参"></a>结构体传参</h3><p><img src="https://img-blog.csdnimg.cn/20201114200210189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-O8WoXoZs-1605354993151)(D:/鸣人的笔记/3/1605250399355.png)]"></p>
+<p>很显然say2传参方式更好，原因：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200249384.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-itv4b7SY-1605354993151)(D:/鸣人的笔记/3/1605250425489.png)]"></p>
+<h3 id="位段"><a href="#位段" class="headerlink" title="位段"></a>位段</h3><h4 id="什么是位段"><a href="#什么是位段" class="headerlink" title="什么是位段"></a>什么是位段</h4><p><img src="https://img-blog.csdnimg.cn/20201114200302484.png#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="位段的内存开辟"><a href="#位段的内存开辟" class="headerlink" title="位段的内存开辟"></a>位段的内存开辟</h4><p><img src="https://img-blog.csdnimg.cn/2020111420031455.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-MDaHuj3r-1605354993151)(D:/鸣人的笔记/3/1605252206748.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200325229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ACKbktUq-1605354993151)(D:/鸣人的笔记/3/1605252434523.png)]"></p>
+<p>一次开辟一个整形空间，这个整形空间4个字节，32个bite位，a需要2个，b需要5个，c需要10个，这一个空间一共32个，但是已经使用了17个，剩下15个，不够d使用了，那么前面15个bite位全都丢掉，重新开辟一个整形空间，也就是4个字节，32个bite位，然后使用30个bite位给d，剩下两个丢掉，也就是说，这个位段一共使用了8个字节</p>
+<p><strong>位段就是为了节省空间存在的</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200337477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bv9RwNSP-1605354993152)(D:/鸣人的笔记/3/1605346060749.png)]"></p>
+<p>结构体的话要开辟四个字节空间，但是位段只需要三个字节空间</p>
+<h4 id="位段的弊端"><a href="#位段的弊端" class="headerlink" title="位段的弊端"></a>位段的弊端</h4><p>位段不能跨平台，可移植程序应避免使用位段</p>
+<p><img src="https://img-blog.csdnimg.cn/202011142003582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-c70mdTVr-1605354993153)(D:/鸣人的笔记/3/1605346248850.png)]"></p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><h4 id="枚举的基本概念及使用"><a href="#枚举的基本概念及使用" class="headerlink" title="枚举的基本概念及使用"></a>枚举的基本概念及使用</h4><p>枚举也就是一一列举</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200657549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4w1xd0u8-1605354993154)(D:/鸣人的笔记/3/1605348562683.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020111420071161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="枚举的优点"><a href="#枚举的优点" class="headerlink" title="枚举的优点"></a>枚举的优点</h4><p><img src="https://img-blog.csdnimg.cn/20201114200737179.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-gwGDJvqg-1605354993155)(D:/鸣人的笔记/3/1605349075331.png)]"></p>
+<h3 id="联合-联合体（共用体）"><a href="#联合-联合体（共用体）" class="headerlink" title="联合-联合体（共用体）"></a>联合-联合体（共用体）</h3><h4 id="联合类型的定义"><a href="#联合类型的定义" class="headerlink" title="联合类型的定义"></a>联合类型的定义</h4><p><img src="https://img-blog.csdnimg.cn/2020111420074638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dnCnNBAI-1605354993155)(D:/鸣人的笔记/3/1605349614539.png)]"></p>
+<h4 id="联合的特点"><a href="#联合的特点" class="headerlink" title="联合的特点"></a>联合的特点</h4><p><img src="https://img-blog.csdnimg.cn/20201114200754825.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8YEZgKb7-1605354993155)(D:/鸣人的笔记/3/1605349545867.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200802753.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-lYibQPtI-1605354993155)(D:/鸣人的笔记/3/1605349506597.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200817646.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-NvoKLGoq-1605354993155)(D:/鸣人的笔记/3/1605349896300.png)]"></p>
+<h4 id="判断计算机的大小端存储方式"><a href="#判断计算机的大小端存储方式" class="headerlink" title="判断计算机的大小端存储方式"></a>判断计算机的大小端存储方式</h4><p><img src="https://img-blog.csdnimg.cn/20201114200825808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-i3gsFYyg-1605354993156)(D:/鸣人的笔记/3/1605350275789.png)]"></p>
+<p>所以如果想要判断存储方式（比如int a的存储方式）是小端还是大端，就可以看第一个字节（一个整型里有4个字节）是不是1</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200834378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-nXfiG5vh-1605354993156)(D:/鸣人的笔记/3/1605350730397.png)]"></p>
+<p>但这种方法不太好，我们可以自己封装一个函数</p>
+<p><img src="https://img-blog.csdnimg.cn/2020111420085362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-k55SFTPl-1605354993157)(D:/鸣人的笔记/3/1605350852756.png)]"></p>
+<p>也可以利用我们刚学到的联合体的知识解决</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114201011216.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-glR4OMMD-1605354993157)(D:/鸣人的笔记/3/1605352290295.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114200908887.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-5cxbKX0I-1605354993158)(D:/鸣人的笔记/3/1605351628909.png)]"></p>
+<h4 id="联合大小的计算"><a href="#联合大小的计算" class="headerlink" title="联合大小的计算"></a>联合大小的计算</h4><p><img src="https://img-blog.csdnimg.cn/20201114201144332.png#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201114201022373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<hr>
+<p>作者：吕文康<br>学校：山东第一医科大学<br>2020年11月14日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-文件操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+      <time datetime="2021-05-14T16:07:36.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="什么是文件"><a href="#什么是文件" class="headerlink" title="什么是文件"></a>什么是文件</h2><p><img src="https://img-blog.csdnimg.cn/2020111912041223.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-s24l9UHL-1605758179341)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751529944.png)]"></p>
+<h3 id="程序文件"><a href="#程序文件" class="headerlink" title="程序文件"></a>程序文件</h3><p><img src="https://img-blog.csdnimg.cn/20201119120418365.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-nGusrMH1-1605758179343)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751608153.png)]"></p>
+<h3 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h3><p><img src="https://img-blog.csdnimg.cn/20201119120424492.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-SoRQqYGU-1605758179344)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751625776.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119120430632.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FCgVtI4s-1605758179346)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751665369.png)]"></p>
+<h2 id="文件名"><a href="#文件名" class="headerlink" title="文件名"></a>文件名</h2><p><img src="https://img-blog.csdnimg.cn/20201119120437466.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cLM7CAPV-1605758179346)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751706145.png)]"></p>
+<h2 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h2><p><img src="https://img-blog.csdnimg.cn/20201119120817570.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-IWCtboVK-1605758179347)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605751818769.png)]"></p>
+<p>一个数据在内存中怎么存储？</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119120824563.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-aktOmMhI-1605758179348)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605752017511.png)]"></p>
+<p>用图来表示一下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119120833247.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-PQcpNyDg-1605758179348)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605752090033.png)]"></p>
+<p>用代码来表示：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119120839582.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-i7yL8iHI-1605758179348)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605752744105.png)]"></p>
+<h2 id="文件缓冲区"><a href="#文件缓冲区" class="headerlink" title="文件缓冲区"></a>文件缓冲区</h2><p><img src="https://img-blog.csdnimg.cn/20201119120844681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-XZL9Z0j5-1605758179349)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753126131.png)]"></p>
+<h2 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h2><p><img src="https://img-blog.csdnimg.cn/20201119120855131.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-O7YnosFH-1605758179350)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753150314.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119124342745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-CDoO9ONz-1605758179350)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753396195.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119124353400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-v4knJ2pk-1605758179350)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753414667.png)]"></p>
+<h2 id="文件的打开和关闭"><a href="#文件的打开和关闭" class="headerlink" title="文件的打开和关闭"></a>文件的打开和关闭</h2><p>文件读写前应打开文件，使用结束后要关闭文件</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119124401628.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bEPg9qJn-1605758179350)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753571930.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119124413841.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-OSE5HIaz-1605758179351)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605753926638.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119124421564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-53LSxNij-1605758179352)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754585763.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119155924289.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-BLgBkbfG-1605758179352)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754088563.png)]"></p>
+<h2 id="文件的顺序读写"><a href="#文件的顺序读写" class="headerlink" title="文件的顺序读写"></a>文件的顺序读写</h2><p><img src="https://img-blog.csdnimg.cn/20201119155933233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LoidUVUF-1605758179352)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754127563.png)]"></p>
+<p>例子：</p>
+<p>写文件：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119155940530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1hpd305d-1605758179353)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754264298.png)]"></p>
+<p>读文件：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119155949101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-DiWpo4x4-1605758179353)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754245707.png)]"></p>
+<p>因为适用于所有输入流，所以外部设备也可以</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119155956819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZFX4zkpo-1605758179353)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754437483.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201119160003823.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-3AHl2uSp-1605758179354)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605754973251.png)]"></p>
+<h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><h3 id="fseek"><a href="#fseek" class="headerlink" title="fseek"></a>fseek</h3><p><img src="https://img-blog.csdnimg.cn/20201119160010493.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-VcyrzsJW-1605758179355)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605756590448.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020111916002297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-QFODxNNL-1605758179355)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605756744396.png)]"></p>
+<h3 id="rewind"><a href="#rewind" class="headerlink" title="rewind"></a>rewind</h3><p><img src="https://img-blog.csdnimg.cn/20201119160028521.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-V579KUtt-1605758179355)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605756845212.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020111916003564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-zlxHepPW-1605758179355)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605756925276.png)]"></p>
+<h2 id="文件结束判定"><a href="#文件结束判定" class="headerlink" title="文件结束判定"></a>文件结束判定</h2><p><img src="https://img-blog.csdnimg.cn/20201119160040747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-peTPx9xI-1605758179356)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605756995773.png)]"></p>
+<p>例子：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201119160047842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存中...(img-zlxHepPW-1605758179355)]"></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-指针面试题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1522,599 +1860,10 @@
 
 
   
-    <article id="post-反射" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2021/05/14/%E5%8F%8D%E5%B0%84/" class="article-date">
-      <time datetime="2021-05-14T15:56:06.000Z" itemprop="datePublished">2021-05-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/14/%E5%8F%8D%E5%B0%84/">反射</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="反射的引出"><a href="#反射的引出" class="headerlink" title="反射的引出"></a>反射的引出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test01() throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException &#123;</span><br><span class="line">    //传统方式</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    cat.hello();</span><br><span class="line"></span><br><span class="line">    //properties类</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line">    System.out.println(&quot;classfullpath=&quot;+classfullpath);//classfullpath=com.mingren.Cat</span><br><span class="line">    System.out.println(&quot;methodName=&quot;+methodName);//method=hello</span><br><span class="line"></span><br><span class="line">    //可以new com.mingren.Cat();</span><br><span class="line">    //但是不可以new classfullpath(); 因为classfullpath是字符串型，不是类</span><br><span class="line"></span><br><span class="line">    //传统的new方法行不通 通过反射解决</span><br><span class="line">    //1.加载类，返回class类型的对象cla</span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    //2.通过对象cla得到加载的类com.mingren.Cat的对象实例</span><br><span class="line">    Object o = cla.newInstance();</span><br><span class="line">    System.out.println(&quot;o的运行类型为&quot;+o.getClass());</span><br><span class="line"></span><br><span class="line">    //3.通过cla得到 加载的类 com.mingren.Cat 的method 方法的对象</span><br><span class="line">    //万物皆对象</span><br><span class="line">    Method method01 = cla.getMethod(methodName);</span><br><span class="line"></span><br><span class="line">    //4.调用方法</span><br><span class="line">    //反射中： 通过method01调用方法 即：通过方法对象实现用方法</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    method01.invoke(o);//传统方法：对象.方法  反射中：方法.invoke(对象)</span><br><span class="line"></span><br><span class="line">    //import java.lang.reflect.Field表示类的成员变量，Field对象表示某个类的成员变量</span><br><span class="line">    //得到name字段</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    Field nameFiled=cla.getField(&quot;name&quot;);//私有 缺省 保护变量不能获取</span><br><span class="line">    System.out.println(nameFiled);</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    //import java.lang.reflect.Constructor表示类的构造方法，Constructor对象表示构造器</span><br><span class="line">    Constructor constructor=cla.getConstructor();</span><br><span class="line">    System.out.println(constructor);</span><br><span class="line"></span><br><span class="line">    Constructor constructor1=cla.getConstructor(String.class);//String.class 就是String类的class对象</span><br><span class="line">    System.out.println(constructor1);</span><br><span class="line"></span><br><span class="line">    Constructor constructor2=cla.getConstructor(String.class,int.class);</span><br><span class="line">    System.out.println(constructor2);</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//反射机制允许程序在执行期借助于Reflection API取得任何类的内部信息(比如成员变量，构造器，成员方法等)</span><br><span class="line">//并且能操作对象的属性以及方法。反射在设计模式和框架底层都很重要</span><br><span class="line"></span><br><span class="line">//加载完类之后，堆中就产生了一个Class类型的对象(一个类中只有一个Class对象)，这个对象包含了类的完整结构信息</span><br><span class="line">//通过这个对象得到类的结构，这个Class对象就像一面镜子，透过这个镜子看到类的结构，所以，形象称之为：反射</span><br></pre></td></tr></table></figure>
-
-<h2 id="反射优缺点"><a href="#反射优缺点" class="headerlink" title="反射优缺点"></a>反射优缺点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//反射优点：动态创建和使用对象(也是框架底层核心)，使用灵活，没有反射机制</span><br><span class="line">//框架技术就失去底层支撑</span><br><span class="line"></span><br><span class="line">//反射缺点：使用反射基本是解释执行，对执行速度有影响</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test02()&#123;</span><br><span class="line">    //传统方法调用hello</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        cat.hello();//</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;传统方法调用时间为：&quot;+(end-start));//4</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void test03() throws Exception &#123;</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line"></span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object o=cla.newInstance();</span><br><span class="line"></span><br><span class="line">    Method method01=cla.getMethod(methodName);</span><br><span class="line"></span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        method01.invoke(o);</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;反射调用时间为：&quot;+(end-start));//260</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//反射调优优化-关闭访问检查</span><br><span class="line">//1.Method和Field、Constructor对象都有setAccessible()方法</span><br><span class="line">//2.setAccessible作用是启动和禁用访问安全检查的开关</span><br><span class="line">//3.参数值为true表示 反射的对象在使用时取消访问检查，提高反射的效率</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test04() throws Exception &#123;</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line"></span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object o=cla.newInstance();</span><br><span class="line"></span><br><span class="line">    Method method01=cla.getMethod(methodName);</span><br><span class="line">    method01.setAccessible(true);//关闭安全检查</span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        method01.invoke(o);</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;反射关闭安全检查后调用时间为：&quot;+(end-start));//180</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Class类分析"><a href="#Class类分析" class="headerlink" title="Class类分析"></a>Class类分析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//1.Class也是类，因此继承object类</span><br><span class="line">//2.Class类对象不是new出来的，而是系统创建的</span><br><span class="line">//3.对于某个类的Class对象，在内存中只有一份，因此类只加载一次</span><br><span class="line">//4.每个类的实例都会记得自己是由哪个Class实例所生成</span><br><span class="line">//5.通过Class对象可以完整的得到一个类的完整结构，通过一系列API</span><br><span class="line">//6.Class对象是存放在堆的</span><br><span class="line">//7.类的字节码二进制数据，是放在方法区的，有的地方称为类的元数据</span><br><span class="line">//(包括方法，变量名，方法名，访问权限等)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Class常用方法"><a href="#Class常用方法" class="headerlink" title="Class常用方法"></a>Class常用方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test05() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Car&quot;;</span><br><span class="line">    //获取到Car类对应的Class对象</span><br><span class="line">    //&lt;?&gt;表示类型不确定</span><br><span class="line">    Class&lt;?&gt; cla=Class.forName(classfullpath);</span><br><span class="line">    //cla对象 是哪个类的Class对象</span><br><span class="line">    System.out.println(cla);//class com.mingren.Car</span><br><span class="line">    //cla运行类型</span><br><span class="line">    System.out.println(cla.getClass());//class java.lang.Class</span><br><span class="line">    //包名</span><br><span class="line">    System.out.println(cla.getPackage().getName());//com.mingren</span><br><span class="line">    //全类名</span><br><span class="line">    System.out.println(cla.getName());//com.mingren.Car</span><br><span class="line">    //通过cla创建话对象实例</span><br><span class="line">    Object object = cla.newInstance();</span><br><span class="line">    System.out.println(object);//object.toString</span><br><span class="line">    //通过反射获取属性</span><br><span class="line">    Field Fieldname = cla.getField(&quot;name&quot;);</span><br><span class="line">    System.out.println(Fieldname.get(object));</span><br><span class="line">    //通过反射给属性赋值</span><br><span class="line">    Fieldname.set(object,&quot;奔驰&quot;);</span><br><span class="line">    System.out.println(Fieldname.get(object));</span><br><span class="line">    //所有的字段属性</span><br><span class="line">    Field[] fields = cla.getFields();</span><br><span class="line">    for (Field f : fields) &#123;</span><br><span class="line">        System.out.println(f.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取Class对象六种方式"><a href="#获取Class对象六种方式" class="headerlink" title="获取Class对象六种方式"></a>获取Class对象六种方式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test06() throws ClassNotFoundException &#123;</span><br><span class="line">    //获取class对象六种方式</span><br><span class="line">    //1. Class.forName()</span><br><span class="line">    String classfullpath=&quot;com.mingren.Cat&quot;;</span><br><span class="line">    Class&lt;?&gt; cla=Class.forName(classfullpath);</span><br><span class="line">    System.out.println(cla);</span><br><span class="line"></span><br><span class="line">    //2.类名.class  用于参数传递</span><br><span class="line">    Class cla2=Cat.class;</span><br><span class="line">    System.out.println(cla2);</span><br><span class="line"></span><br><span class="line">    //3.对象.getclass()  用于有对象实例</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    Class cla3 = cat.getClass();</span><br><span class="line">    System.out.println(cla3);</span><br><span class="line"></span><br><span class="line">    //4.通过类加载器获取到类的class对象</span><br><span class="line">    //先得到类加载器</span><br><span class="line">    ClassLoader classLoader=cat.getClass().getClassLoader();</span><br><span class="line">    //通过类加载器得到Class对象</span><br><span class="line">    Class cla4=classLoader.loadClass(classfullpath);</span><br><span class="line">    System.out.println(cla4);</span><br><span class="line">    //cla1-4 其实都是一个Class对象</span><br><span class="line">    System.out.println(cla.hashCode());</span><br><span class="line">    System.out.println(cla2.hashCode());</span><br><span class="line">    System.out.println(cla3.hashCode());</span><br><span class="line">    System.out.println(cla4.hashCode());</span><br><span class="line"></span><br><span class="line">    //5.基本数据类型得到Class对象</span><br><span class="line">    Class&lt;Integer&gt; integerClass = int.class;</span><br><span class="line">    Class&lt;Character&gt; characterClass = char.class;</span><br><span class="line">    Class&lt;Boolean&gt; booleanClass = boolean.class;</span><br><span class="line">    System.out.println(integerClass);</span><br><span class="line"></span><br><span class="line">    //6.基本数据类型对应的包装类，可以通过.TYPE得到Class对象</span><br><span class="line">    Class&lt;Integer&gt; integerClass1 = Integer.TYPE;</span><br><span class="line">    Class&lt;Character&gt; characterClass1 = Character.TYPE;</span><br><span class="line"></span><br><span class="line">    System.out.println(integerClass1.hashCode());</span><br><span class="line">    System.out.println(integerClass.hashCode());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="哪些类型有Class对象"><a href="#哪些类型有Class对象" class="headerlink" title="哪些类型有Class对象"></a>哪些类型有Class对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    外部类，成员内部类，静态内部类，局部内部类，匿名内部类。</span><br><span class="line">    interface：接口</span><br><span class="line">    数组</span><br><span class="line">    enum：枚举</span><br><span class="line">    annotation：注解</span><br><span class="line">    基本数据类型</span><br><span class="line">    void</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-
-<h2 id="动静态加载"><a href="#动静态加载" class="headerlink" title="动静态加载"></a>动静态加载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    静态加载：编译时加载相关的类，如果没有报错，依赖性太强</span><br><span class="line">    动态加载：运行时加载需要的类，如果运行时不使用该类，即使不存在，也不报错，降低依赖性</span><br><span class="line"></span><br><span class="line">    类加载时机：</span><br><span class="line">    1.当创建对象时(new)</span><br><span class="line">    2.当子类被加载时</span><br><span class="line">    3.调用类中的静态成员时</span><br><span class="line">    4.通过反射</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
-
-<h2 id="通过反射获取类的结构信息一"><a href="#通过反射获取类的结构信息一" class="headerlink" title="通过反射获取类的结构信息一"></a>通过反射获取类的结构信息一</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test07() throws ClassNotFoundException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Person&quot;;</span><br><span class="line">    Class&lt;?&gt; PerClass = Class.forName(classfullpath);</span><br><span class="line">    //获得全类名</span><br><span class="line">    System.out.println(&quot;全类名:&quot;+PerClass.getName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得简单类名</span><br><span class="line">    System.out.println(&quot;简单类名:&quot;+PerClass.getSimpleName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得public修饰的所有属性 本类以及父类</span><br><span class="line">    Field[] fields = PerClass.getFields();</span><br><span class="line">    for (Field field : fields) &#123;</span><br><span class="line">        System.out.println(&quot;public修饰的所有属性 本类以及父类:&quot;+field.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类中所有属性 不包含父类</span><br><span class="line">    Field[] declaredFields = PerClass.getDeclaredFields();</span><br><span class="line">    for (Field declaredField : declaredFields) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性 不包含父类:&quot;+declaredField.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类中所有属性 包含所有的父类</span><br><span class="line">    Method[] methods = PerClass.getMethods();</span><br><span class="line">    for (Method method : methods) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性 包含所有的父类:&quot;+method.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类所有方法</span><br><span class="line">    Method[] declaredMethods = PerClass.getDeclaredMethods();</span><br><span class="line">    for (Method declaredMethod : declaredMethods) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有方法:&quot;+declaredMethod.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得所有public修饰的构造器 不包括父类</span><br><span class="line">    Constructor&lt;?&gt;[] constructors = PerClass.getConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; constructor : constructors) &#123;</span><br><span class="line">        System.out.println(&quot;所有public修饰的构造器 不包括父类:&quot;+constructor.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类所有的构造器</span><br><span class="line">    Constructor&lt;?&gt;[] declaredConstructors = PerClass.getDeclaredConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; declaredConstructor : declaredConstructors) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有的构造器:&quot;+declaredConstructor.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回包信息</span><br><span class="line">    System.out.println(&quot;包信息:&quot;+PerClass.getPackage());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回父类信息</span><br><span class="line">    Class&lt;?&gt; superclass = PerClass.getSuperclass();</span><br><span class="line">    System.out.println(&quot;父类信息&quot;+superclass.getName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //以Class[]形式返回接口信息</span><br><span class="line">    Class&lt;?&gt;[] interfaces = PerClass.getInterfaces();</span><br><span class="line">    for (Class&lt;?&gt; anInterface : interfaces) &#123;</span><br><span class="line">        System.out.println(&quot;接口信息&quot;+anInterface.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回注解信息</span><br><span class="line">    Annotation[] annotations = PerClass.getAnnotations();</span><br><span class="line">    for (Annotation annotation : annotations) &#123;</span><br><span class="line">        System.out.println(&quot;注解信息:&quot;+annotation);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="通过反射获取类的结构信息二"><a href="#通过反射获取类的结构信息二" class="headerlink" title="通过反射获取类的结构信息二"></a>通过反射获取类的结构信息二</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//说明：1.默认修饰符是0，public是1，private是2，protected是4，static是8，final是16，</span><br><span class="line">//       若同时存在多个 则相加(public static)--&gt;1+8=9</span><br><span class="line">//getType：以Class形式返回类型</span><br><span class="line">//getName：返回属性名</span><br><span class="line">//getParameterTypes返回形参列表 如果空参 则不执行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test08() throws ClassNotFoundException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Person&quot;;</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; PerClass = Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Field[] declaredFields = PerClass.getDeclaredFields();</span><br><span class="line">    for (Field declaredField : declaredFields) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性：&quot;+declaredField</span><br><span class="line">        +&quot; 该属性的修饰符值：&quot;+declaredField.getModifiers()</span><br><span class="line">        +&quot; 该属性的类型：&quot;+declaredField.getType()</span><br><span class="line">            );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Method[] declaredMethods = PerClass.getDeclaredMethods();</span><br><span class="line">    for (Method declaredMethod : declaredMethods) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有方法:&quot;+declaredMethod.getName()</span><br><span class="line">        +&quot; 该方法的修饰符值：&quot;+declaredMethod.getModifiers()</span><br><span class="line">        +&quot; 该方法的返回值类型：&quot;+declaredMethod.getReturnType()</span><br><span class="line">            );</span><br><span class="line">        Class&lt;?&gt;[] parameterTypes = declaredMethod.getParameterTypes();</span><br><span class="line">        for (Class&lt;?&gt; parameterType : parameterTypes) &#123;</span><br><span class="line">            System.out.println(&quot;参数类型为：&quot;+parameterType);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Constructor&lt;?&gt;[] declaredConstructors = PerClass.getDeclaredConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; declaredConstructor : declaredConstructors) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有的构造器:&quot; + declaredConstructor.getName());</span><br><span class="line">        Class&lt;?&gt;[] parameterTypes = declaredConstructor.getParameterTypes();</span><br><span class="line">        for (Class&lt;?&gt; parameterType : parameterTypes) &#123;</span><br><span class="line">            System.out.println(&quot;参数类型为：&quot; + parameterType);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="通过反射创建对象"><a href="#通过反射创建对象" class="headerlink" title="通过反射创建对象"></a>通过反射创建对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test09() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException &#123;</span><br><span class="line">    //先获取User类的Class对象</span><br><span class="line">    String classfullpath=&quot;com.mingren.User&quot;;</span><br><span class="line">    Class Usecla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    //1.通过public的无参构造器创建实例</span><br><span class="line">    Object object = Usecla.newInstance();</span><br><span class="line">    System.out.println(object);</span><br><span class="line"></span><br><span class="line">    //2.通过public的有参构造器创建实例</span><br><span class="line">    //2.1先得到对应的构造器</span><br><span class="line">    Constructor constructor = Usecla.getConstructor(String.class,int.class);</span><br><span class="line">    //2.2创建实例，并传入实参</span><br><span class="line">    Object object1 = constructor.newInstance(&quot;mr&quot;,19);</span><br><span class="line">    System.out.println(object1);</span><br><span class="line"></span><br><span class="line">    //3.通过非public的有参构造器创建实例</span><br><span class="line">    //3.1先得到对应的构造器</span><br><span class="line">    Constructor constructor1 = Usecla.getDeclaredConstructor(int.class, String.class);</span><br><span class="line">    //创建实例</span><br><span class="line">    constructor1.setAccessible(true);//爆破</span><br><span class="line"></span><br><span class="line">    Object object2 = constructor1.newInstance(20, &quot;zz&quot;);</span><br><span class="line">    System.out.println(object2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="反射爆破操作属性"><a href="#反射爆破操作属性" class="headerlink" title="反射爆破操作属性"></a>反射爆破操作属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test10() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Student&quot;;</span><br><span class="line">    Class Stucla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object object = Stucla.newInstance();</span><br><span class="line"></span><br><span class="line">    //使用反射得到age属性对象</span><br><span class="line">    Field age = Stucla.getField(&quot;age&quot;);</span><br><span class="line">    age.set(object,19);</span><br><span class="line">    System.out.println(age.get(object));</span><br><span class="line"></span><br><span class="line">    //使用反射操作name属性</span><br><span class="line">    Field Fname = Stucla.getDeclaredField(&quot;name&quot;);</span><br><span class="line"></span><br><span class="line">    Fname.setAccessible(true);//爆破</span><br><span class="line">    Fname.set(object,&quot;mr&quot;);//Fname.set(null,&quot;mr&quot;); 因为name是静态变量 所以可以写成null或者object</span><br><span class="line">    System.out.println(Fname.get(object));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="反射爆破操作方法"><a href="#反射爆破操作方法" class="headerlink" title="反射爆破操作方法"></a>反射爆破操作方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">    public void test11() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException &#123;</span><br><span class="line">        String classfullpath=&quot;com.mingren.Boss&quot;;</span><br><span class="line">        Class Bocla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">​    Object object = Bocla.newInstance();</span><br><span class="line">​    Method test2 = Bocla.getMethod(&quot;test2&quot;, String.class);</span><br><span class="line">​    test2.invoke(object,&quot;mr&quot;);</span><br><span class="line"></span><br><span class="line">​    //调用private static的方法</span><br><span class="line">​    Method declaredMethod = Bocla.getDeclaredMethod(&quot;test1&quot;,String.class,int.class,char.class);</span><br><span class="line">​    declaredMethod.setAccessible(true);</span><br><span class="line">​    declaredMethod.invoke(object,&quot;123&quot;,45,&#x27;6&#x27;);</span><br><span class="line"></span><br><span class="line">​    //反射中，如果方法有返回值，则统一返回object，但是他运行类型和方法定义的返回值类型一致</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/14/%E9%9B%86%E5%90%88/" class="article-date">
-      <time datetime="2021-05-14T10:19:10.000Z" itemprop="datePublished">2021-05-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="什么是集合"><a href="#什么是集合" class="headerlink" title="什么是集合"></a>什么是集合</h2><p>概念：</p>
-<p>对象的容器，定义了对多个对象进项操作的的常用方法。可实现数组的功能。</p>
-<p>和数组区别：</p>
-<ol>
-<li>数组长度固定，集合长度不固定。</li>
-<li>数组可以存储基本类型和引用类型，集合只能存储引用类型。</li>
-</ol>
-<p>位置：</p>
-<p>java.util.*;</p>
-<h2 id="Collection体系集合"><a href="#Collection体系集合" class="headerlink" title="Collection体系集合"></a>Collection体系集合</h2><h2 id="Collection父接口"><a href="#Collection父接口" class="headerlink" title="Collection父接口"></a>Collection父接口</h2><p><strong>特点</strong>：代表一组任意类型的对象，无序、无下标、不能重复。</p>
-<p><strong>方法</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">boolean add(Object obj) //添加一个对象。</span><br><span class="line">boolean addAll(Collection c) //讲一个集合中的所有对象添加到此集合中。</span><br><span class="line">void clear() //清空此集合中的所有对象。</span><br><span class="line">boolean contains(Object o) //检查此集合中是否包含o对象。</span><br><span class="line">boolean equals(Object o) //比较此集合是否与指定对象相等。</span><br><span class="line">boolean isEmpty() //判断此集合是否为空。</span><br><span class="line">boolean remove(Object o) //在此集合中移除o对象。</span><br><span class="line">int size() //返回此集合中的元素个数。</span><br><span class="line">Object[] toArray() //将此集合转换成数组。</span><br></pre></td></tr></table></figure>
-
-<h3 id="Collection接口的使用1"><a href="#Collection接口的使用1" class="headerlink" title="Collection接口的使用1"></a>Collection接口的使用1</h3><pre><code>@Test
-    public void CollectionTest01()&#123;
-        //创建集合 Collection是接口 不能实例化 通过子类实例化
-        Collection collection=new ArrayList();
-        //添加元素
-        collection.add(&quot;苹果&quot;);
-        collection.add(&quot;香蕉&quot;);
-        collection.add(&quot;梨&quot;);
-        System.out.println(&quot;元素个数为：&quot;+collection.size());
-        System.out.println(collection);//其实调用的是collection.toString方法
-
-        //删除元素
-        //collection.remove(&quot;香蕉&quot;);//clear()是清空元素
-        System.out.println(&quot;元素个数为：&quot;+collection.size());
-        System.out.println(collection);
-
-        //遍历元素(重点)
-        //通过增强for遍历
-        for(Object object:collection)&#123;
-            System.out.println(object);//可以像下面测试2一样强转一下类型 也可以不用强转
-        &#125;
-
-        //通过迭代器遍历
-        Iterator it=collection.iterator();
-        while(it.hasNext())&#123;//hasNext()方法 下一位置有无元素 Boolean
-            //可以像下面测试2一样强转一下类型 也可以不用强转
-            System.out.println(it.next());//返回指的位置的元素
-            //it.remove();//可以用迭代器删除元素  但是不可以 collection.remove()这样删除元素
-        &#125;
-
-        //判断有无元素
-        System.out.println(collection.contains(&quot;香蕉&quot;));
-        System.out.println(collection.contains(&quot;西瓜&quot;));
-
-        //判断是否为空
-        System.out.println(collection.isEmpty());
-    &#125;
-</code></pre>
-<h3 id="Collection接口的使用2"><a href="#Collection接口的使用2" class="headerlink" title="Collection接口的使用2"></a>Collection接口的使用2</h3><pre><code>   @Test
-    public void CollectionTest02()&#123;
-        //创建集合
-        Collection collection=new ArrayList();
-
-        Student student1=new Student(&quot;张三&quot;,15);
-        Student student2=new Student(&quot;李四&quot;,18);
-        Student student3=new Student(&quot;王五&quot;,20);
-
-        //添加数据
-        collection.add(student1);
-        collection.add(student2);
-        collection.add(student3);
-        System.out.println(&quot;集合数据个数为：&quot;+collection.size());
-        System.out.println(collection.toString());
-
-        //删除数据
-        collection.remove(student1);
-        System.out.println(&quot;集合数据个数为：&quot;+collection.size());
-        System.out.println(collection.toString());
-
-        //遍历集合
-        //增强for
-        for(Object object:collection)&#123;
-            Student stu=(Student)object;
-            System.out.println(stu);
-        &#125;
-
-        System.out.println(&quot;---------------&quot;);
-        //迭代器 迭代过程不能使用collection的删除方法
-        Iterator it=collection.iterator();
-        while(it.hasNext())&#123;
-            Student stu=(Student) it.next();
-            System.out.println(stu);
-        &#125;
-    &#125;
-</code></pre>
-<h3 id="学生类"><a href="#学生类" class="headerlink" title="学生类"></a>学生类</h3><pre><code>public class Student &#123;
-    String name;
-    int age;
-
-    public Student(String name, int age) &#123;
-        this.name = name;
-        this.age = age;
-    &#125;
-
-    public String getName() &#123;
-        return name;
-    &#125;
-
-    public void setName(String name) &#123;
-        this.name = name;
-    &#125;
-
-    public int getAge() &#123;
-        return age;
-    &#125;
-
-    public void setAge(int age) &#123;
-        this.age = age;
-    &#125;
-
-    @Override
-    public String toString() &#123;
-        return &quot;Student&#123;&quot; +
-                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
-                &quot;, age=&quot; + age +
-                &#39;&#125;&#39;;
-    &#125;
-&#125;
-</code></pre>
-<h2 id="Collection子接口"><a href="#Collection子接口" class="headerlink" title="Collection子接口"></a>Collection子接口</h2><h3 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h3><p><strong>特点</strong>：有序、有下标、元素可以重复。</p>
-<p><strong>方法</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void add(int index,Object o) //在index位置插入对象o</span><br><span class="line"></span><br><span class="line">boolean addAll(index,Collection c) //将一个集合中的元素添加到此集合中的index位置。</span><br><span class="line"></span><br><span class="line">Object get(int index) //返回集合中指定位置的元素。</span><br><span class="line"></span><br><span class="line">List subList(int fromIndex,int toIndex) //返回fromIndex和toIndex之间的集合元素。</span><br></pre></td></tr></table></figure>
-
-<h3 id="List集合的使用1"><a href="#List集合的使用1" class="headerlink" title="List集合的使用1"></a>List集合的使用1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void ListTest01()&#123;</span><br><span class="line">    //创建集合</span><br><span class="line">    List list=new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    //添加数据</span><br><span class="line">    list.add(&quot;张三&quot;);</span><br><span class="line">    list.add(&quot;李四&quot;);</span><br><span class="line">    list.add(0,&quot;王五&quot;);</span><br><span class="line">    System.out.println(&quot;数据个数为：&quot;+list.size());</span><br><span class="line">    System.out.println(list);</span><br><span class="line"></span><br><span class="line">    //删除数据</span><br><span class="line">    list.remove(&quot;张三&quot;);//等同于 list.remove(0);</span><br><span class="line"></span><br><span class="line">    //遍历数据</span><br><span class="line">    //普通for循环</span><br><span class="line">    for(int i=0;i&lt;list.size();i++)&#123;</span><br><span class="line">        System.out.println(list.get(i));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //加强for</span><br><span class="line">    for(Object object:list)&#123;</span><br><span class="line">        System.out.println(object);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //迭代器</span><br><span class="line">    Iterator it=list.iterator();</span><br><span class="line">    while(it.hasNext())&#123;</span><br><span class="line">        System.out.println(it.next());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">    //使用列表迭代器，listIterator可以双向遍历，添加、删除及修改元素</span><br><span class="line">    ListIterator listIterator=list.listIterator();</span><br><span class="line"></span><br><span class="line">    //从前向后遍历</span><br><span class="line">    while(listIterator.hasNext())&#123;</span><br><span class="line">        System.out.println(listIterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">    //从后向前(此时指针指向末尾)</span><br><span class="line">    while(listIterator.hasPrevious())&#123;</span><br><span class="line">        System.out.println(listIterator.previous());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------------------&quot;);</span><br><span class="line">    //判断</span><br><span class="line">    System.out.println(list.isEmpty());</span><br><span class="line">    System.out.println(list.contains(&quot;王五&quot;));</span><br><span class="line">    //获取位置</span><br><span class="line">    System.out.println(list.indexOf(&quot;李四&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="List集合的使用2"><a href="#List集合的使用2" class="headerlink" title="List集合的使用2"></a>List集合的使用2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void ListTest02()&#123;</span><br><span class="line">    //创建集合</span><br><span class="line">    List list=new ArrayList();</span><br><span class="line"></span><br><span class="line">    //添加数字 自动装箱 20这些数字不再是基本数据类型了 而变成了包装类</span><br><span class="line">    list.add(20);</span><br><span class="line">    list.add(30);</span><br><span class="line">    list.add(40);</span><br><span class="line">    list.add(50);</span><br><span class="line">    list.add(60);</span><br><span class="line">    System.out.println(&quot;元素个数为：&quot;+list.size());</span><br><span class="line">    System.out.println(list);</span><br><span class="line"></span><br><span class="line">    //删除操作</span><br><span class="line">    //list.remove(20);  如果想删除20 它调用的是数组下标 会越界报错 所以可以用下面两种方法</span><br><span class="line">    list.remove((Object)20);//法1</span><br><span class="line">    list.remove(new Integer(20));//法2</span><br><span class="line">    System.out.println(&quot;元素个数为：&quot;+list.size());</span><br><span class="line">    System.out.println(list);</span><br><span class="line"></span><br><span class="line">    //</span><br><span class="line">    List list2=list.subList(1,3);//包含1 不包含3 (含头不含尾)</span><br><span class="line">    System.out.println(list2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>数组结构实现，查询块、增删慢；</p>
-<p>JDK1.2版本，运行效率快、线程不安全。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void ArrayListTest01()&#123;</span><br><span class="line">    ArrayList arrayList=new ArrayList();</span><br><span class="line">    Student s1=new Student(&quot;张三&quot;, 21);</span><br><span class="line">    Student s2=new Student(&quot;李四&quot;, 22);</span><br><span class="line">    Student s3=new Student(&quot;王五&quot;, 21);</span><br><span class="line">    arrayList.add(s1);</span><br><span class="line">    arrayList.add(s2);</span><br><span class="line">    arrayList.add(s3);</span><br><span class="line">    System.out.println(&quot;元素个数：&quot;+arrayList.size());</span><br><span class="line">    System.out.println(arrayList.toString());</span><br><span class="line">    //2.删除元素</span><br><span class="line">    arrayList.remove(s1);</span><br><span class="line">    System.out.println(&quot;元素个数：&quot;+arrayList.size());</span><br><span class="line">    System.out.println(arrayList.toString());</span><br><span class="line">    //3.遍历元素</span><br><span class="line">    //3.1使用迭代器</span><br><span class="line">    Iterator iterator=arrayList.iterator();</span><br><span class="line">    while(iterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    //3.2使用列表迭代器</span><br><span class="line">    ListIterator listIterator=arrayList.listIterator();</span><br><span class="line"></span><br><span class="line">    //从前往后遍历</span><br><span class="line">    while(listIterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(listIterator.next());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //从后往前遍历</span><br><span class="line">    while(listIterator.hasPrevious()) &#123;</span><br><span class="line">        System.out.println(listIterator.previous());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //判断</span><br><span class="line">    System.out.println(arrayList.isEmpty());</span><br><span class="line">    System.out.println(arrayList.contains(new Student(&quot;李四&quot;, 22)));</span><br><span class="line">    //注：与上文相同的问题。</span><br><span class="line">    //查找</span><br><span class="line">    System.out.println(arrayList.indexOf(s2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>有一个关键性的问题，就是我们删除时，new的数据类型和已存在的相同时，仍然不能删除，因为地址不一样，而源码中需要比较地址是否相同，所以，如果我们需要，可以自己重写学生类的equals方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public boolean equals(Object o) &#123;</span><br><span class="line">        //如果地址相同 那肯定一样了</span><br><span class="line">        if (this == o)</span><br><span class="line">            return true;</span><br><span class="line">        //如果传过来空指针或者类型不同 肯定不一样</span><br><span class="line">        if (o == null || getClass() != o.getClass())</span><br><span class="line">            return false;</span><br><span class="line">        //强转一下类型</span><br><span class="line">        Student student = (Student) o;</span><br><span class="line">        //根据我们的需要重写 这里我们希望 如果名字和年龄都一样 则一样</span><br><span class="line">        return age == student.age &amp;&amp;</span><br><span class="line">                Objects.equals(name, student.name);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="ArrayL源码分析"><a href="#ArrayL源码分析" class="headerlink" title="ArrayL源码分析"></a>ArrayL源码分析</h3><p>默认容量大小：<code>private static final int DEFAULT_CAPACITY = 10;</code></p>
-<p>存放元素的数组：<code>transient Object[] elementData;</code></p>
-<p>实际元素个数：<code>private int size;</code></p>
-<p>创建对象时调用的无参构造函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//这是一个空的数组</span><br><span class="line">private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;</span><br><span class="line">public ArrayList() &#123;</span><br><span class="line">    this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这段源码说明当你没有向集合中添加任何元素时，集合容量为0。那么默认的10个容量怎么来的呢？</p>
-<p>这就得看看add方法的源码了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public boolean add(E e) &#123;</span><br><span class="line">    ensureCapacityInternal(size + 1);  // Increments modCount!!</span><br><span class="line">    elementData[size++] = e;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>假设你new了一个数组，当前容量为0，size当然也为0。这时调用add方法进入到<code>ensureCapacityInternal(size + 1);</code>该方法源码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">private void ensureCapacityInternal(int minCapacity) &#123;</span><br><span class="line">    ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该方法中的参数minCapacity传入的值为size+1也就是 1，接着我们再进入到<code>calculateCapacity(elementData, minCapacity)</code>里面：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private static int calculateCapacity(Object[] elementData, int minCapacity) &#123;</span><br><span class="line">    if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) &#123;</span><br><span class="line">        return Math.max(DEFAULT_CAPACITY, minCapacity);</span><br><span class="line">    &#125;</span><br><span class="line">    return minCapacity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>elementData就是存放元素的数组，当前容量为0，if条件成立，返回默认容量<code>DEFAULT_CAPACITY</code>也就是10。这个值作为参数又传入<code>ensureExplicitCapacity()</code>方法中，进入该方法查看源码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private void ensureExplicitCapacity(int minCapacity) &#123;</span><br><span class="line">    modCount++;</span><br><span class="line">    // overflow-conscious code</span><br><span class="line">    if (minCapacity - elementData.length &gt; 0)</span><br><span class="line">        grow(minCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><del>先不要管modCount这个变量。</del></p>
-<p>因为elementData数组长度为0，所以if条件成立，调用grow方法，<strong>重要的部分来了</strong>，我们再次进入到grow方法的源码中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private void grow(int minCapacity) &#123;</span><br><span class="line">    // overflow-conscious code</span><br><span class="line">    int oldCapacity = elementData.length;</span><br><span class="line">    int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);</span><br><span class="line">    if (newCapacity - minCapacity &lt; 0)</span><br><span class="line">        newCapacity = minCapacity;</span><br><span class="line">    if (newCapacity - MAX_ARRAY_SIZE &gt; 0)</span><br><span class="line">        newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">    // minCapacity is usually close to size, so this is a win:</span><br><span class="line">    elementData = Arrays.copyOf(elementData, newCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个方法先声明了一个oldCapacity变量将数组长度赋给它，其值为0；又声明了一个newCapacity变量其值为<code>oldCapacity+一个增量</code>，可以发现这个增量是和原数组长度有关的量，当然在这里也为0。第一个if条件满足，newCapacity的值为10（这就是默认的容量，不理解的话再看看前面）。第二个if条件不成立，也可以不用注意，因为MAX_ARRAY_SIZE的定义如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;</span><br></pre></td></tr></table></figure>
-
-<p>这个值太大了以至于第二个if条件没有了解的必要。</p>
-<p>最后一句话就是为elementData数组赋予了新的长度，<code>Arrays.copyOf()</code>方法返回的数组是新的数组对象，原数组对象不会改变，该拷贝不会影响原来的数组。<code>copyOf()</code>的第二个自变量指定要建立的新数组长度，如果新数组的长度超过原数组的长度，则保留数组默认值。</p>
-<p>这时候再回到add的方法中，接着就向下执行<code>elementData[size++] = e;</code>到这里为止关于ArrayList就讲解得差不多了，当数组长度为10的时候你们可以试着过一下源码，查一下每次的增量是多少（答案是每次扩容为原来的1.5倍）。</p>
-<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>数组结构实现，查询快、增删慢；</p>
-<p>JDK1.0版本，运行效率慢、线程安全。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  @Test</span><br><span class="line">  public void VectorTest01()&#123;</span><br><span class="line">      Vector vector=new Vector();</span><br><span class="line">      vector.add(&quot;张三&quot;);</span><br><span class="line">      vector.add(&quot;李四&quot;);</span><br><span class="line">      vector.add(&quot;王五&quot;);</span><br><span class="line">      System.out.println(&quot;元素个数为：&quot;+vector.size());</span><br><span class="line">      //遍历</span><br><span class="line">      //枚举器</span><br><span class="line">      Enumeration enumeration=vector.elements();</span><br><span class="line">      while (enumeration.hasMoreElements())&#123;</span><br><span class="line">          System.out.println(enumeration.nextElement());</span><br><span class="line">      &#125;</span><br><span class="line">      //判断</span><br><span class="line">System.out.println(vector.isEmpty());</span><br><span class="line">System.out.println(vector.contains(&quot;王五&quot;));</span><br><span class="line">//Vector其他方法</span><br><span class="line">//firstElement()  lastElement()  ElementAt();</span><br></pre></td></tr></table></figure>
-
-<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>链表结构实现，增删快，查询慢。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void LinkedListTest01()&#123;</span><br><span class="line">    LinkedList linkedList=new LinkedList&lt;&gt;();</span><br><span class="line">    Student s1=new Student(&quot;张三&quot;, 21);</span><br><span class="line">    Student s2=new Student(&quot;李四&quot;, 22);</span><br><span class="line">    Student s3=new Student(&quot;王五&quot;, 21);</span><br><span class="line">    //1.添加元素</span><br><span class="line">    linkedList.add(s1);</span><br><span class="line">    linkedList.add(s2);</span><br><span class="line">    linkedList.add(s3);</span><br><span class="line">    System.out.println(&quot;元素个数：&quot;+linkedList.size());</span><br><span class="line">    System.out.println(linkedList);</span><br><span class="line"></span><br><span class="line">    //遍历</span><br><span class="line">    //普通for</span><br><span class="line">    for(int i=0;i&lt;linkedList.size();i++)&#123;</span><br><span class="line">        System.out.println(linkedList.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------&quot;);</span><br><span class="line">    //加强for</span><br><span class="line">    for(Object object:linkedList)&#123;</span><br><span class="line">        System.out.println(object);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------&quot;);</span><br><span class="line">    //迭代器</span><br><span class="line">    Iterator iterator=linkedList.iterator();</span><br><span class="line">    while(iterator.hasNext())&#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------&quot;);</span><br><span class="line">    //列表迭代器</span><br><span class="line">    ListIterator listIterator=linkedList.listIterator();</span><br><span class="line">    //从前往后遍历</span><br><span class="line">    while(listIterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(listIterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;-----------&quot;);</span><br><span class="line">    //从后往前遍历</span><br><span class="line">    while(listIterator.hasPrevious()) &#123;</span><br><span class="line">        System.out.println(listIterator.previous());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="LinkedList源码分析"><a href="#LinkedList源码分析" class="headerlink" title="LinkedList源码分析"></a>LinkedList源码分析</h3><p>LinkedList首先有三个属性：</p>
-<p>链表大小：<code>transient int size = 0;</code></p>
-<p>（指向）第一个结点/头结点：<code> transient Node&lt;E&gt; first;</code></p>
-<p>（指向）最后一个结点/尾结点：<code>transient Node&lt;E&gt; last;</code></p>
-<p>关于Node类型我们再进入到类里看看：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">COPYprivate static class Node&lt;E&gt; &#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        this.item = element;</span><br><span class="line">        this.next = next;</span><br><span class="line">        this.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先item存放的是实际数据；next指向下一个结点而prev指向上一个结点。</p>
-<p>Node带参构造方法的三个参数分别是前一个结点、存储的数据、后一个结点，调用这个构造方法时将它们赋值给当前对象。</p>
-<p>LinkedList是如何添加元素的呢？先看看add方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic boolean add(E e) &#123;</span><br><span class="line">    linkLast(e);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>进入到linkLast方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">COPYvoid linkLast(E e) &#123;</span><br><span class="line">    final Node&lt;E&gt; l = last;</span><br><span class="line">    final Node&lt;E&gt; newNode = new Node&lt;&gt;(l, e, null);</span><br><span class="line">    last = newNode;</span><br><span class="line">    if (l == null)</span><br><span class="line">        first = newNode;</span><br><span class="line">    else</span><br><span class="line">        l.next = newNode;</span><br><span class="line">    size++;</span><br><span class="line">    modCount++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>假设刚开始new了一个LinkedList对象，first和last属性都为空，调用add进入到linkLast方法。</p>
-<p>首先创建一个Node变量 l 将last（此时为空）赋给它，然后new一个newNode变量存储数据，并且它的前驱指向l，后继指向null；再把last指向newNode。如下图所示：</p>
-<p><img src="https://pic.downk.cc/item/5f9a62a01cd1bbb86bc58487.png" alt="img"></p>
-<p>如果满足if条件，说明这是添加的第一个结点，将first指向newNode：</p>
-<p><img src="https://pic.downk.cc/item/5f9a631c1cd1bbb86bc59ca6.png" alt="img"></p>
-<p>至此，LinkedList对象的第一个数据添加完毕。假设需要再添加一个数据，我们可以再来走一遍，过程同上不再赘述，图示如下：</p>
-<p><img src="https://pic.downk.cc/item/5f9a680e1cd1bbb86bc681f6.png" alt="img"></p>
-<h3 id="ArrayList和LinkedList区别"><a href="#ArrayList和LinkedList区别" class="headerlink" title="ArrayList和LinkedList区别"></a><strong>ArrayList和LinkedList区别</strong></h3><p>ArrayList：必须开辟连续空间，查询快，增删慢。</p>
-<p>LinkedList：无需开辟连续空间，查询慢，增删快。</p>
-<p><img src="https://pic.downk.cc/item/5f9a6b371cd1bbb86bc74cda.png" alt="img"></p>
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>Java泛型是JDK1.5中引入的一个新特性，其本质是参数化类型，把类型作为参数传递。</p>
-<p>常见形式有泛型类、泛型接口、泛型方法。</p>
-<p>语法：</p>
-<p>&lt;T,…&gt; T称为类型占位符，表示一种引用类型。</p>
-<p>好处：</p>
-<p>提高代码的重用性。</p>
-<p>防止类型转换异常，提高代码的安全性。</p>
-<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><h3 id><a href="#" class="headerlink" title></a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 泛型类</span><br><span class="line"> * 语法：类名&lt;T&gt;</span><br><span class="line"> * T是类型占位符，表示一种引用类型，编写多个使用逗号隔开</span><br><span class="line"> * </span><br><span class="line"> */</span><br><span class="line">public class myGeneric&lt;T&gt;&#123;</span><br><span class="line">	//1.创建泛型变量</span><br><span class="line">	//不能使用new来创建，因为泛型是不确定的类型，也可能拥有私密的构造方法。</span><br><span class="line">	T t;</span><br><span class="line">	//T t2=new T(); 泛型不能实例化 因为构造方法可能私有 可能没有无 参构造</span><br><span class="line">	//2.泛型作为方法的参数</span><br><span class="line">	public void show(T t) &#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">	&#125;</span><br><span class="line">	//泛型作为方法的返回值</span><br><span class="line">	public T getT() &#123;</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 泛型接口</span><br><span class="line"> * 语法：接口名&lt;T&gt;</span><br><span class="line"> * 注意：不能创建泛型静态常量</span><br><span class="line"> */</span><br><span class="line">public interface MyInterface&lt;T&gt; &#123;</span><br><span class="line">    //创建常量</span><br><span class="line">	String nameString=&quot;tang&quot;;</span><br><span class="line">    </span><br><span class="line">	T server(T t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 实现接口时确定泛型类</span><br><span class="line"> */</span><br><span class="line">public class MyInterfaceImpl implements MyInterface&lt;String&gt;&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public String server(String t) &#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">		return t; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//测试</span><br><span class="line">MyInterfaceImpl myInterfaceImpl=new MyInterfaceImpl();</span><br><span class="line">myInterfaceImpl.server(&quot;zhu&quot;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 实现接口时不确定泛型类</span><br><span class="line"> */</span><br><span class="line">public class MyInterfaceImpl2&lt;T&gt; implements MyInterface&lt;T&gt;&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public T server(T t) &#123;</span><br><span class="line">		System.out.println(t);</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//测试</span><br><span class="line">MyInterfaceImpl2&lt;Integer&gt; myInterfaceImpl2=new MyInterfaceImpl2&lt;Integer&gt;();</span><br><span class="line">myInterfaceImpl2.server(2000);</span><br></pre></td></tr></table></figure>
-
-<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 泛型方法</span><br><span class="line"> * 语法：&lt;T&gt; 返回类型</span><br><span class="line"> */</span><br><span class="line">public class MyGenericMethod &#123;</span><br><span class="line">	public &lt;T&gt; void show(T t) &#123;</span><br><span class="line">		System.out.println(&quot;泛型方法&quot;+t);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//测试</span><br><span class="line">MyGenericMethod myGenericMethod=new MyGenericMethod();</span><br><span class="line">myGenericMethod.show(&quot;tang&quot;);</span><br><span class="line">myGenericMethod.show(200);</span><br><span class="line">myGenericMethod.show(3.14);</span><br></pre></td></tr></table></figure>
-
-<h3 id="泛型好处"><a href="#泛型好处" class="headerlink" title="泛型好处"></a>泛型好处</h3><p>提高代码重用性</p>
-<p>防止类型转换异常，提高代码安全性</p>
-<h3 id="泛型集合"><a href="#泛型集合" class="headerlink" title="泛型集合"></a>泛型集合</h3><ul>
-<li><p><strong>概念</strong>：参数化类型、类型安全的集合，强制集合元素的类型必须一致。</p>
-</li>
-<li><p>特点</p>
-<p>：</p>
-<ul>
-<li>编译时即可检查，而非运行时抛出异常。</li>
-<li>访问时，不必类型转换（拆箱）。</li>
-<li>不同泛型指尖引用不能相互赋值，泛型不存在多态。</li>
-</ul>
-</li>
-</ul>
-<p>之前我们在创建LinkedList类型对象的时候并没有使用泛型，但是进到它的源码中会发现：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class LinkedList&lt;E&gt;</span><br><span class="line">extends AbstractSequentialList&lt;E&gt;</span><br><span class="line">implements List&lt;E&gt;, Deque&lt;E&gt;, Cloneable, java.io.Serializable&#123;//略&#125;</span><br></pre></td></tr></table></figure>
-
-<p>它是一个泛型类，而我之前使用的时候并没有传递，说明java语法是允许的，这个时候传递的类型是Object类，虽然它是所有类的父类，可以存储任意的类型，但是在遍历、获取元素时需要原来的类型就要进行强制转换。这个时候就会出现一些问题，假如往链表里存储了许多不同类型的数据，在强转的时候就要判断每一个原来的类型，这样就很容易出现错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; arrayList1=new ArrayList();</span><br><span class="line">arrayList1.add(&quot;223&quot;);</span><br><span class="line">//arrayList1.add(123);</span><br><span class="line"></span><br><span class="line">ArrayList&lt;Student&gt; arrayList2=new ArrayList&lt;&gt;();</span><br><span class="line">arrayList2.add(s1);</span><br></pre></td></tr></table></figure>
-
-<p>通过泛型只能传入某一种数据，避免错误发生</p>
-<h2 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h2><h3 id="set子接口"><a href="#set子接口" class="headerlink" title="set子接口"></a>set子接口</h3><ul>
-<li><strong>特点</strong>：无序、无下标、元素不可重复。</li>
-<li><strong>方法</strong>：全部继承自Collection中的方法。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void SetTest01()&#123;</span><br><span class="line">    Set&lt;String&gt; set=new HashSet&lt;String&gt;();</span><br><span class="line">    //1.添加数据</span><br><span class="line">    set.add(&quot;ming&quot;);</span><br><span class="line">    set.add(&quot;ren&quot;);</span><br><span class="line">    set.add(&quot;zuo&quot;);</span><br><span class="line">    System.out.println(&quot;数据个数：&quot;+set.size());</span><br><span class="line">    System.out.println(set.toString());//无序输出</span><br><span class="line">    //2.删除数据</span><br><span class="line">    /*</span><br><span class="line">     * set.remove(&quot;ren&quot;); System.out.println(set.toString());</span><br><span class="line">     */</span><br><span class="line">    //3.遍历【重点】</span><br><span class="line">    //3.1 使用增强for</span><br><span class="line">    for (String string : set) &#123;</span><br><span class="line">        System.out.println(string);</span><br><span class="line">    &#125;</span><br><span class="line">    //3.2 使用迭代器</span><br><span class="line">    Iterator&lt;String&gt; iterator=set.iterator();</span><br><span class="line">    while (iterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    //4.判断</span><br><span class="line">    System.out.println(set.contains(&quot;ming&quot;));</span><br><span class="line">    System.out.println(set.isEmpty());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="set实现类"><a href="#set实现类" class="headerlink" title="set实现类"></a>set实现类</h3><h4 id="HashSet-重点"><a href="#HashSet-重点" class="headerlink" title="HashSet(重点)"></a>HashSet(重点)</h4><ul>
-<li><p>基于HashCode计算元素存放位置。</p>
-</li>
-<li><p>当存入元素的哈希码相同时，会调用equals进行确认，如结果为true，则拒绝后者存入。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void HashSetTest01()&#123;</span><br><span class="line">    HashSet&lt;Person&gt; hashSet=new HashSet&lt;&gt;();</span><br><span class="line">    Person p1=new Person(&quot;mi&quot;,21);</span><br><span class="line">    Person p2=new Person(&quot;ng&quot;, 22);</span><br><span class="line">    Person p3=new Person(&quot;ren&quot;, 21);</span><br><span class="line">    //1.添加元素</span><br><span class="line">    hashSet.add(p1);</span><br><span class="line">    hashSet.add(p2);</span><br><span class="line">    hashSet.add(p3);</span><br><span class="line">    //重复，添加失败</span><br><span class="line">    hashSet.add(p3);</span><br><span class="line">    //直接new一个相同属性的对象，依然会被添加，不难理解。</span><br><span class="line">    //假如相同属性便认为是同一个对象，怎么修改？</span><br><span class="line">    hashSet.add(new Person(&quot;mi&quot;, 21));</span><br><span class="line">    System.out.println(hashSet.toString());</span><br><span class="line">    //2.删除元素</span><br><span class="line">    hashSet.remove(p2);</span><br><span class="line">    //3.遍历</span><br><span class="line">    //3.1 增强for</span><br><span class="line">    for (Person person : hashSet) &#123;</span><br><span class="line">        System.out.println(person);</span><br><span class="line">    &#125;</span><br><span class="line">    //3.2 迭代器</span><br><span class="line">    Iterator&lt;Person&gt; iterator=hashSet.iterator();</span><br><span class="line">    while (iterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line">    //4.判断</span><br><span class="line">    System.out.println(hashSet.isEmpty());</span><br><span class="line">    //直接new一个相同属性的对象结果输出是false，不难理解。</span><br><span class="line">    //注：假如相同属性便认为是同一个对象，该怎么做？</span><br><span class="line">    System.out.println(hashSet.contains(new Person(&quot;mi&quot;, 21)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>注</strong>：hashSet存储过程：</p>
-<ol>
-<li>根据hashCode计算保存的位置，如果位置为空，则直接保存，否则执行第二步。</li>
-<li>执行equals方法，如果方法返回true，则认为是重复，拒绝存储，否则形成链表。</li>
-</ol>
-<p>存储过程实际上就是重复依据，要实现“注”里的问题，可以重写hashCode和equals代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean equals(Object o) &#123;</span><br><span class="line">    if (this == o) return true;</span><br><span class="line">    if (o == null || getClass() != o.getClass()) return false;</span><br><span class="line">    Person person = (Person) o;</span><br><span class="line">    return age == person.age &amp;&amp;</span><br><span class="line">            Objects.equals(name, person.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public int hashCode() &#123;</span><br><span class="line">    return Objects.hash(name, age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><ul>
-<li><p>基于排序顺序实现不重复。</p>
-</li>
-<li><p>实现了SortedSet接口，对集合元素自动排序。</p>
-</li>
-<li><p>元素对象的类型必须实现Comparable接口，指定排序规则。</p>
-</li>
-<li><p>通过CompareTo方法确定是否为重复元素。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void TreeSetTest01()&#123;</span><br><span class="line">    TreeSet&lt;Person&gt; persons=new TreeSet&lt;Person&gt;();</span><br><span class="line">    Person p1=new Person(&quot;mi&quot;,21);</span><br><span class="line">    Person p2=new Person(&quot;ng&quot;, 22);</span><br><span class="line">    Person p3=new Person(&quot;ren&quot;, 21);</span><br><span class="line">    //1.添加元素</span><br><span class="line">    persons.add(p1);</span><br><span class="line">    persons.add(p2);</span><br><span class="line">    persons.add(p3);</span><br><span class="line">    //注：直接添加会报类型转换错误，需要实现Comparable接口</span><br><span class="line">    System.out.println(persons.toString());</span><br><span class="line">    //2.删除元素</span><br><span class="line">    //persons.remove(p1);</span><br><span class="line">    persons.remove(new Person(&quot;ng&quot;, 22));</span><br><span class="line">    System.out.println(persons.toString());</span><br><span class="line">    //3.遍历（略）</span><br><span class="line">     for(Person person:persons)&#123;</span><br><span class="line">         System.out.println(person);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    Iterator iterator=persons.iterator();</span><br><span class="line">     while (iterator.hasNext())&#123;</span><br><span class="line">         System.out.println(iterator.next());</span><br><span class="line">     &#125;</span><br><span class="line">    //4.判断</span><br><span class="line">    System.out.println(persons.contains(new Person(&quot;mi&quot;, 21)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>//注：直接添加会报类型转换错误，需要实现Comparable接口</p>
-<p>查看Comparable接口的源码，发现只有一个compareTo抽象方法，在人类中实现它：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Person implements Comparable&lt;Person&gt;&#123;</span><br><span class="line">    @Override</span><br><span class="line">	//1.先按姓名比</span><br><span class="line">	//2.再按年龄比</span><br><span class="line">	public int compareTo(Person o) &#123;</span><br><span class="line">		int n1=this.getName().compareTo(o.getName());</span><br><span class="line">		int n2=this.age-o.getAge();</span><br><span class="line">		return n1==0?n2:n1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>除了实现Comparable接口里的比较方法，TreeSet也提供了一个带比较器Comparator的构造方法，使用匿名内部类来实现它：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">TreeSet&lt;Person&gt; persons=new TreeSet&lt;Person&gt;(new Comparator&lt;Person&gt;() &#123;</span><br><span class="line">			@Override</span><br><span class="line">			public int compare(Person o1, Person o2) &#123;</span><br><span class="line">				// 先按年龄比较</span><br><span class="line">				// 再按姓名比较</span><br><span class="line">				int n1=o1.getAge()-o2.getAge();</span><br><span class="line">				int n2=o1.getName().compareTo(o2.getName());</span><br><span class="line">				return n1==0?n2:n1;</span><br><span class="line">			&#125;			</span><br><span class="line">		&#125;);</span><br><span class="line">		Person p1=new Person(&quot;tang&quot;,21);</span><br><span class="line">		Person p2=new Person(&quot;he&quot;, 22);</span><br><span class="line">		Person p3=new Person(&quot;yu&quot;, 21);</span><br><span class="line">		persons.add(p1);</span><br><span class="line">		persons.add(p2);</span><br><span class="line">		persons.add(p3);</span><br><span class="line">		System.out.println(persons.toString());</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来我们来做一个小案例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 要求：使用TreeSet集合实现字符串按照长度进行排序</span><br><span class="line"> * helloworld tangrui hechengyang wangzixu yuguoming</span><br><span class="line"> * Comparator接口实现定制比较</span><br><span class="line"> */</span><br><span class="line">public class Demo6 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TreeSet&lt;String&gt; treeSet=new TreeSet&lt;String&gt;(new Comparator&lt;String&gt;() &#123;</span><br><span class="line">			@Override</span><br><span class="line">			//先比较字符串长度</span><br><span class="line">			//再比较字符串</span><br><span class="line">			public int compare(String o1, String o2) &#123;</span><br><span class="line">				int n1=o1.length()-o2.length();</span><br><span class="line">				int n2=o1.compareTo(o2);</span><br><span class="line">				return n1==0?n2:n1;</span><br><span class="line">			&#125;			</span><br><span class="line">		&#125;);</span><br><span class="line">		treeSet.add(&quot;helloworld&quot;);</span><br><span class="line">		treeSet.add(&quot;tangrui&quot;);</span><br><span class="line">		treeSet.add(&quot;hechenyang&quot;);</span><br><span class="line">		treeSet.add(&quot;yuguoming&quot;);</span><br><span class="line">		treeSet.add(&quot;wangzixu&quot;);</span><br><span class="line">		System.out.println(treeSet.toString());</span><br><span class="line">        //输出[tangrui, wangzixu, yuguoming, hechenyang, helloworld]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><ul>
-<li><p><strong>特点</strong>：存储一对数据（Key-Value），无序、无下标，键不可重复。</p>
-</li>
-<li><p><strong>方法</strong>：</p>
-<p>V put(K key,V value)//将对象存入到集合中，关联键值。key重复则覆盖原值。</p>
-</li>
-<li><p>Object get(Object key)//根据键获取相应的值。</p>
-<p>Set<K>//返回所有的key</K></p>
-<p>Collection<V> values()//返回包含所有值的Collection集合。</V></p>
-<p>Set&lt;Map.Entry&lt;K,V&gt;&gt;//键值匹配的set集合</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">    public void MapTest01()&#123;</span><br><span class="line">        Map&lt;String,Integer&gt; map=new HashMap&lt;String, Integer&gt;();</span><br><span class="line">        //1.添加元素</span><br><span class="line">        map.put(&quot;mi&quot;, 21);</span><br><span class="line">        map.put(&quot;ng&quot;, 22);</span><br><span class="line">        map.put(&quot;ren&quot;, 23);</span><br><span class="line">        map.put(&quot;mi&quot;, 25);        //覆盖第一个</span><br><span class="line">        System.out.println(map.toString());</span><br><span class="line">        //2.删除元素</span><br><span class="line">        map.remove(&quot;ng&quot;);</span><br><span class="line">        System.out.println(map.toString());</span><br><span class="line">        //3.遍历</span><br><span class="line">        //3.1 使用keySet();</span><br><span class="line">        for (String key : map.keySet()) &#123;</span><br><span class="line">            System.out.println(key+&quot; &quot;+map.get(key));</span><br><span class="line">        &#125;</span><br><span class="line">        //3.2 使用entrySet();效率较高</span><br><span class="line">        for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">            System.out.println(entry.getKey()+&quot; &quot;+entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Map实现类"><a href="#Map实现类" class="headerlink" title="Map实现类"></a>Map实现类</h3><h4 id="HashMap-重点"><a href="#HashMap-重点" class="headerlink" title="HashMap(重点)"></a>HashMap(重点)</h4><p>JDK1.2版本，线程不安全，运行效率快；允许用null作为key或是value。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void HashMapTest01()&#123;</span><br><span class="line">    HashMap&lt;Student, String&gt; hashMap=new HashMap&lt;Student, String&gt;();</span><br><span class="line">    Student s1=new Student(&quot;mi&quot;, 36);</span><br><span class="line">    Student s2=new Student(&quot;ng&quot;, 101);</span><br><span class="line">    Student s3=new Student(&quot;ren&quot;, 10);</span><br><span class="line">    //1.添加元素</span><br><span class="line">    hashMap.put(s1, &quot;成都&quot;);</span><br><span class="line">    hashMap.put(s2, &quot;杭州&quot;);</span><br><span class="line">    hashMap.put(s3, &quot;郑州&quot;);</span><br><span class="line">    //添加失败，但会更新值</span><br><span class="line">    hashMap.put(s3,&quot;上海&quot;);</span><br><span class="line">    //添加成功，不过两个属性一模一样；</span><br><span class="line">    //注：假如相同属性便认为是同一个对象，怎样修改？</span><br><span class="line">    hashMap.put(new Student(&quot;ren&quot;, 10),&quot;上海&quot;);</span><br><span class="line">    System.out.println(hashMap.toString());</span><br><span class="line">    //2.删除元素</span><br><span class="line">    hashMap.remove(s3);</span><br><span class="line">    System.out.println(hashMap.toString());</span><br><span class="line">    //3.遍历</span><br><span class="line">    //3.1 使用keySet()遍历</span><br><span class="line">    for (Student key : hashMap.keySet()) &#123;</span><br><span class="line">        System.out.println(key+&quot; &quot;+hashMap.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    //3.2 使用entrySet()遍历</span><br><span class="line">    for (Map.Entry&lt;Student, String&gt; entry : hashMap.entrySet()) &#123;</span><br><span class="line">        System.out.println(entry.getKey()+&quot; &quot;+entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">    //4.判断</span><br><span class="line">    //注：同上</span><br><span class="line">    System.out.println(hashMap.containsKey(new Student(&quot;he&quot;, 10)));</span><br><span class="line">    System.out.println(hashMap.containsValue(&quot;成都&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注：和之前说过的HashSet类似，重复依据是hashCode和equals方法，重写即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">  public int hashCode() &#123;</span><br><span class="line">      final int prime = 31;</span><br><span class="line">      int result = 1;</span><br><span class="line">      result = prime * result + id;</span><br><span class="line">      result = prime * result + ((name == null) ? 0 : name.hashCode());</span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line">  @Override</span><br><span class="line">  public boolean equals(Object obj) &#123;</span><br><span class="line">      if (this == obj)</span><br><span class="line">          return true;</span><br><span class="line">      if (obj == null)</span><br><span class="line">          return false;</span><br><span class="line">      if (getClass() != obj.getClass())</span><br><span class="line">          return false;</span><br><span class="line">      Student other = (Student) obj;</span><br><span class="line">      if (id != other.id)</span><br><span class="line">          return false;</span><br><span class="line">      if (name == null) &#123;</span><br><span class="line">          if (other.name != null)</span><br><span class="line">              return false;</span><br><span class="line">      &#125; else if (!name.equals(other.name))</span><br><span class="line">          return false;</span><br><span class="line">      return true;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h4 id="HashMap源码分析"><a href="#HashMap源码分析" class="headerlink" title="HashMap源码分析"></a><strong>HashMap源码分析</strong></h4></li>
-<li><p>默认初始化容量：<code>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; // aka 16</code></p>
-<ul>
-<li>数组最大容量：<code>static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;</code></li>
-</ul>
-</li>
-<li><p>默认加载因子：<code>static final float DEFAULT_LOAD_FACTOR = 0.75f;</code></p>
-</li>
-<li><p>链表调整为红黑树的链表长度阈值（JDK1.8）：<code>static final int TREEIFY_THRESHOLD = 8;</code></p>
-</li>
-<li><p>红黑树调整为链表的链表长度阈值（JDK1.8）：<code>static final int UNTREEIFY_THRESHOLD = 6;</code></p>
-</li>
-<li><p>链表调整为红黑树的数组最小阈值（JDK1.8）：<code>static final int MIN_TREEIFY_CAPACITY = 64;</code></p>
-</li>
-<li><p>HashMap存储的数组：<code>transient Node&lt;K,V&gt;[] table;</code></p>
-</li>
-<li><p>HashMap存储的元素个数：<code>transient int size;</code></p>
-<blockquote>
-<ul>
-<li>默认加载因子是什么？<ul>
-<li>就是判断数组是否扩容的一个因子。假如数组容量为100，如果HashMap的存储元素个数超过了100*0.75=75，那么就会进行扩容。</li>
-</ul>
-</li>
-<li>链表调整为红黑树的链表长度阈值是什么？<ul>
-<li>假设在数组中下标为3的位置已经存储了数据，当新增数据时通过哈希码得到的存储位置又是3，那么就会在该位置形成一个链表，当链表过长时就会转换成红黑树以提高执行效率，这个阈值就是链表转换成红黑树的最短链表长度；</li>
-</ul>
-</li>
-<li>红黑树调整为链表的链表长度阈值是什么？<ul>
-<li>当红黑树的元素个数小于该阈值时就会转换成链表。</li>
-</ul>
-</li>
-<li>链表调整为红黑树的数组最小阈值是什么？<ul>
-<li>并不是只要链表长度大于8就可以转换成红黑树，在前者条件成立的情况下，数组的容量必须大于等于64才会进行转换。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p>HashMap的数组table存储的就是一个个的Node&lt;K,V&gt;类型，很清晰地看到有一对键值，还有一个指向next的指针（以下只截取了部分源码）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPYstatic class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; &#123;</span><br><span class="line">      final K key;</span><br><span class="line">      V value;</span><br><span class="line">      Node&lt;K,V&gt; next;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>之前的代码中在new对象时调用的是HashMap的无参构造方法，进入到该构造方法的源码查看一下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic HashMap() &#123;</span><br><span class="line">      this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>发现没什么内容，只是赋值了一个默认加载因子；而在上文我们观察到源码中table和size都没有赋予初始值，说明刚创建的HashMap对象没有分配容量，并不拥有默认的16个空间大小，这样做的目的是为了节约空间，此时table为null，size为0。</p>
-<p>当我们往对象里添加元素时调用put方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic V put(K key, V value) &#123;</span><br><span class="line">      return putVal(hash(key), key, value, false, true);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>put方法把key和value传给了putVal，同时还传入了一个hash(Key)所返回的值，这是一个产生哈希值的方法，再进入到putVal方法（部分源码）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">COPYfinal V putVal(int hash, K key, V value, boolean onlyIfAbsent,</span><br><span class="line">                    boolean evict) &#123;</span><br><span class="line">      Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;</span><br><span class="line">      if ((tab = table) == null || (n = tab.length) == 0)</span><br><span class="line">          n = (tab = resize()).length;</span><br><span class="line">      if ((p = tab[i = (n - 1) &amp; hash]) == null)</span><br><span class="line">          tab[i] = newNode(hash, key, value, null);</span><br><span class="line">      else&#123;</span><br><span class="line">          //略</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里面创建了一个tab数组和一个Node变量p，第一个if实际是判断table是否为空，而我们现在只关注刚创建HashMap对象时的状态，此时tab和table都为空，满足条件，执行内部代码，这条代码其实就是把resize()所返回的结果赋给tab，n就是tab的长度，resize顾名思义就是重新调整大小。查看resize()源码（部分）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">COPYfinal Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">      Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">      int oldCap = (oldTab == null) ? 0 : oldTab.length;</span><br><span class="line">      int oldThr = threshold;</span><br><span class="line">      if (oldCap &gt; 0);</span><br><span class="line">      else if (oldThr &gt; 0);</span><br><span class="line">      else &#123;               // zero initial threshold signifies using defaults</span><br><span class="line">          newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">          newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">      &#125; </span><br><span class="line">      @SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span><br><span class="line">      Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];</span><br><span class="line">      table = newTab;</span><br><span class="line">      return newTab;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>该方法首先把table及其长度赋值给oldTab和oldCap；threshold是阈值的意思，此时为0，所以前两个if先不管，最后else里newCap的值为默认初始化容量16；往下创建了一个newCap大小的数组并将其赋给了table，刚创建的HashMap对象就在这里获得了初始容量。然后我们再回到putVal方法，第二个if就是根据哈希码得到的tab中的一个位置是否为空，为空便直接添加元素，此时数组中无元素所以直接添加。至此HashMap对象就完成了第一个元素的添加。当添加的元素超过16*0.75=12时，就会进行扩容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COPYfinal V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict)&#123;</span><br><span class="line">      if (++size &gt; threshold)</span><br><span class="line">          resize();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>扩容的代码如下（部分）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">COPYfinal Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">      int oldCap = (oldTab == null) ? 0 : oldTab.length;</span><br><span class="line">      int newCap;</span><br><span class="line">      if (oldCap &gt; 0) &#123;</span><br><span class="line">          if (oldCap &gt;= MAXIMUM_CAPACITY) &#123;//略&#125;</span><br><span class="line">          else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                   oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>核心部分是else if里的移位操作，<strong>也就是说每次扩容都是原来大小的两倍</strong>。</p>
-</li>
-<li><p>*注**：额外说明的一点是在JDK1.8以前链表是头插入，JDK1.8以后链表是尾插入。</p>
-</li>
-</ul>
-<hr>
-<h4 id="HashSet源码分析"><a href="#HashSet源码分析" class="headerlink" title="HashSet源码分析"></a><strong>HashSet源码分析</strong></h4><p>了解完HashMap之后，再回过头来看之前的HashSet源码，为什么放在后面写你们看一下源码就知道了（部分）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic class HashSet&lt;E&gt;</span><br><span class="line">      extends AbstractSet&lt;E&gt;</span><br><span class="line">      implements Set&lt;E&gt;, Cloneable, java.io.Serializable</span><br><span class="line">  &#123;</span><br><span class="line">      private transient HashMap&lt;E,Object&gt; map;</span><br><span class="line">      private static final Object PRESENT = new Object();</span><br><span class="line">      public HashSet() &#123;</span><br><span class="line">          map = new HashMap&lt;&gt;();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以看见HashSet的存储结构就是HashMap，那它的存储方式是怎样的呢？可以看一下add方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic boolean add(E e) &#123;</span><br><span class="line">      return map.put(e, PRESENT)==null;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>很明了地发现它的add方法调用的就是map的put方法，把元素作为map的key传进去的。。</p>
-<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a><strong>Hashtable</strong></h4><ul>
-<li><p>JDK1.0版本，线程安全，运行效率慢；不允许null作为key或是value。</p>
-</li>
-<li><p>初始容量11，加载因子0.75。</p>
-<p>这个集合在开发过程中已经不用了，稍微了解即可。</p>
-</li>
-</ul>
-<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a><strong>Properties</strong></h4><ul>
-<li>Hashtable的子类，要求key和value都是String。通常用于配置文件的读取。</li>
-</ul>
-<p>它继承了Hashtable的方法，与流关系密切，此处不详解。</p>
-<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>实现了SortedMap接口（是Map的子接口），可以对key自动排序</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">TreeMap&lt;Student, Integer&gt; treeMap=new TreeMap&lt;Student, Integer&gt;();</span><br><span class="line">		Student s1=new Student(&quot;tang&quot;, 36);</span><br><span class="line">		Student s2=new Student(&quot;yu&quot;, 101);</span><br><span class="line">		Student s3=new Student(&quot;he&quot;, 10);</span><br><span class="line">		//1.添加元素</span><br><span class="line">		treeMap.put(s1, 21);</span><br><span class="line">		treeMap.put(s2, 22);</span><br><span class="line">		treeMap.put(s3, 21);</span><br><span class="line">		//不能直接打印，需要实现Comparable接口，因为红黑树需要比较大小</span><br><span class="line">		System.out.println(treeMap.toString());</span><br><span class="line">		//2.删除元素</span><br><span class="line">		treeMap.remove(new Student(&quot;he&quot;, 10));</span><br><span class="line">		System.out.println(treeMap.toString());</span><br><span class="line">		//3.遍历</span><br><span class="line">		//3.1 使用keySet()</span><br><span class="line">		for (Student key : treeMap.keySet()) &#123;</span><br><span class="line">			System.out.println(key+&quot; &quot;+treeMap.get(key));</span><br><span class="line">		&#125;</span><br><span class="line">		//3.2 使用entrySet()</span><br><span class="line">		for (Entry&lt;Student, Integer&gt; entry : treeMap.entrySet()) &#123;</span><br><span class="line">			System.out.println(entry.getKey()+&quot; &quot;+entry.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">		//4.判断</span><br><span class="line">		System.out.println(treeMap.containsKey(s1));</span><br><span class="line">		System.out.println(treeMap.isEmpty());		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在学生类中实现Comparable接口：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Student implements Comparable&lt;Student&gt;&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compareTo(Student o) &#123;</span><br><span class="line">        int n1=this.id-o.id;</span><br><span class="line">        return n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>除此之外还可以使用比较器来定制比较：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TreeMap&lt;Student, Integer&gt; treeMap2=new TreeMap&lt;Student, Integer&gt;(new Comparator&lt;Student&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Student o1, Student o2) &#123;</span><br><span class="line">        // 略</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;			</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="TreeSet源码"><a href="#TreeSet源码" class="headerlink" title="TreeSet源码"></a><strong>TreeSet源码</strong></h4><p>和HashSet类似，放在TreeMap之后讲便一目了然（部分）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic class TreeSet&lt;E&gt; extends AbstractSet&lt;E&gt;</span><br><span class="line">    implements NavigableSet&lt;E&gt;, Cloneable, java.io.Serializable</span><br><span class="line">&#123;</span><br><span class="line">    private transient NavigableMap&lt;E,Object&gt; m;</span><br><span class="line">    private static final Object PRESENT = new Object();</span><br><span class="line">    TreeSet(NavigableMap&lt;E,Object&gt; m) &#123;</span><br><span class="line">        this.m = m;</span><br><span class="line">    &#125;</span><br><span class="line">    public TreeSet() &#123;</span><br><span class="line">        this(new TreeMap&lt;E,Object&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>TreeSet的存储结构实际上就是TreeMap，再来看其存储方式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPYpublic boolean add(E e) &#123;</span><br><span class="line">    return m.put(e, PRESENT)==null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>它的add方法调用的就是TreeMap的put方法，将元素作为key传入到存储结构中。</p>
-<h2 id="Collections工具类"><a href="#Collections工具类" class="headerlink" title="Collections工具类"></a><strong>Collections工具类</strong></h2><ul>
-<li><p><strong>概念</strong>：集合工具类，定义了除了存取以外的集合常用方法。</p>
-</li>
-<li><p><strong>方法</strong>：</p>
-<p>public static void reverse(List&lt;?&gt; list)//反转集合中元素的顺序</p>
-<p>public static void shuffle(List&lt;?&gt; list)//随机重置集合元素的顺序</p>
-<p>public static void sort(List<T> list)//升序排序（元素类型必须实现Comparable接口）</T></p>
-</li>
-</ul>
-<p>List<Integer> list=new ArrayList<Integer>();<br>        list.add(20);<br>        list.add(10);<br>        list.add(30);<br>        list.add(90);<br>        list.add(70);</Integer></Integer></p>
-<pre><code>    //sort排序
-    System.out.println(list.toString());
-    Collections.sort(list);
-    System.out.println(list.toString());
-    System.out.println(&quot;---------&quot;);
-    
-    //binarySearch二分查找
-    int i=Collections.binarySearch(list, 10);
-    System.out.println(i);
-    
-    //copy复制
-    List&lt;Integer&gt; list2=new ArrayList&lt;Integer&gt;();
-    for(int i1=0;i1&lt;5;++i1) &#123;
-        list2.add(0);
-    &#125;
-    //该方法要求目标元素容量大于等于源目标
-    Collections.copy(list2, list);
-    System.out.println(list2.toString());
-    
-    //reserve反转
-    Collections.reverse(list2);
-    System.out.println(list2.toString());
-    
-    //shuffle 打乱
-    Collections.shuffle(list2);
-    System.out.println(list2.toString());
-    
-    //补充：list转成数组
-    Integer[] arr=list.toArray(new Integer[0]);
-    System.out.println(arr.length);
-    //补充：数组转成集合 
-    String[] nameStrings= &#123;&quot;tang&quot;,&quot;he&quot;,&quot;yu&quot;&#125;;
-    //受限集合，不能添加和删除
-    List&lt;String&gt; list3=Arrays.asList(nameStrings);
-    System.out.println(list3);
-    
-    //注：基本类型转成集合时需要修改为包装类
-&#125;
-</code></pre>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

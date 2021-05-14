@@ -3,24 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>集合 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="集合什么是集合概念： 对象的容器，定义了对多个对象进项操作的的常用方法。可实现数组的功能。 和数组区别：  数组长度固定，集合长度不固定。 数组可以存储基本类型和引用类型，集合只能存储引用类型。  位置： java.util.*; Collection体系集合Collection父接口特点：代表一组任意类型的对象，无序、无下标、不能重复。 方法： 123456789boolean add(Obje">
-<meta property="og:type" content="article">
-<meta property="og:title" content="集合">
-<meta property="og:url" content="https://mingren1314.github.io/2021/05/14/%E9%9B%86%E5%90%88/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://mingren1314.github.io/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="集合什么是集合概念： 对象的容器，定义了对多个对象进项操作的的常用方法。可实现数组的功能。 和数组区别：  数组长度固定，集合长度不固定。 数组可以存储基本类型和引用类型，集合只能存储引用类型。  位置： java.util.*; Collection体系集合Collection父接口特点：代表一组任意类型的对象，无序、无下标、不能重复。 方法： 123456789boolean add(Obje">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://pic.downk.cc/item/5f9a62a01cd1bbb86bc58487.png">
-<meta property="og:image" content="https://pic.downk.cc/item/5f9a631c1cd1bbb86bc59ca6.png">
-<meta property="og:image" content="https://pic.downk.cc/item/5f9a680e1cd1bbb86bc681f6.png">
-<meta property="og:image" content="https://pic.downk.cc/item/5f9a6b371cd1bbb86bc74cda.png">
-<meta property="article:published_time" content="2021-05-14T10:19:10.000Z">
-<meta property="article:modified_time" content="2021-05-14T10:21:14.691Z">
 <meta property="article:author" content="mingr">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic.downk.cc/item/5f9a62a01cd1bbb86bc58487.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -38,6 +29,9 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
+    
+    
+  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -49,8 +43,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: false,
-          isPost: true,
+          isHome: true,
+          isPost: false,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -312,7 +306,97 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-反射" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/14/%E5%8F%8D%E5%B0%84/" class="article-date">
+      <time datetime="2021-05-14T15:56:06.000Z" itemprop="datePublished">2021-05-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/14/%E5%8F%8D%E5%B0%84/">反射</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="反射的引出"><a href="#反射的引出" class="headerlink" title="反射的引出"></a>反射的引出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test01() throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException &#123;</span><br><span class="line">    //传统方式</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    cat.hello();</span><br><span class="line"></span><br><span class="line">    //properties类</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line">    System.out.println(&quot;classfullpath=&quot;+classfullpath);//classfullpath=com.mingren.Cat</span><br><span class="line">    System.out.println(&quot;methodName=&quot;+methodName);//method=hello</span><br><span class="line"></span><br><span class="line">    //可以new com.mingren.Cat();</span><br><span class="line">    //但是不可以new classfullpath(); 因为classfullpath是字符串型，不是类</span><br><span class="line"></span><br><span class="line">    //传统的new方法行不通 通过反射解决</span><br><span class="line">    //1.加载类，返回class类型的对象cla</span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    //2.通过对象cla得到加载的类com.mingren.Cat的对象实例</span><br><span class="line">    Object o = cla.newInstance();</span><br><span class="line">    System.out.println(&quot;o的运行类型为&quot;+o.getClass());</span><br><span class="line"></span><br><span class="line">    //3.通过cla得到 加载的类 com.mingren.Cat 的method 方法的对象</span><br><span class="line">    //万物皆对象</span><br><span class="line">    Method method01 = cla.getMethod(methodName);</span><br><span class="line"></span><br><span class="line">    //4.调用方法</span><br><span class="line">    //反射中： 通过method01调用方法 即：通过方法对象实现用方法</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    method01.invoke(o);//传统方法：对象.方法  反射中：方法.invoke(对象)</span><br><span class="line"></span><br><span class="line">    //import java.lang.reflect.Field表示类的成员变量，Field对象表示某个类的成员变量</span><br><span class="line">    //得到name字段</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    Field nameFiled=cla.getField(&quot;name&quot;);//私有 缺省 保护变量不能获取</span><br><span class="line">    System.out.println(nameFiled);</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">    //import java.lang.reflect.Constructor表示类的构造方法，Constructor对象表示构造器</span><br><span class="line">    Constructor constructor=cla.getConstructor();</span><br><span class="line">    System.out.println(constructor);</span><br><span class="line"></span><br><span class="line">    Constructor constructor1=cla.getConstructor(String.class);//String.class 就是String类的class对象</span><br><span class="line">    System.out.println(constructor1);</span><br><span class="line"></span><br><span class="line">    Constructor constructor2=cla.getConstructor(String.class,int.class);</span><br><span class="line">    System.out.println(constructor2);</span><br><span class="line">    System.out.println(&quot;************************&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//反射机制允许程序在执行期借助于Reflection API取得任何类的内部信息(比如成员变量，构造器，成员方法等)</span><br><span class="line">//并且能操作对象的属性以及方法。反射在设计模式和框架底层都很重要</span><br><span class="line"></span><br><span class="line">//加载完类之后，堆中就产生了一个Class类型的对象(一个类中只有一个Class对象)，这个对象包含了类的完整结构信息</span><br><span class="line">//通过这个对象得到类的结构，这个Class对象就像一面镜子，透过这个镜子看到类的结构，所以，形象称之为：反射</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射优缺点"><a href="#反射优缺点" class="headerlink" title="反射优缺点"></a>反射优缺点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//反射优点：动态创建和使用对象(也是框架底层核心)，使用灵活，没有反射机制</span><br><span class="line">//框架技术就失去底层支撑</span><br><span class="line"></span><br><span class="line">//反射缺点：使用反射基本是解释执行，对执行速度有影响</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test02()&#123;</span><br><span class="line">    //传统方法调用hello</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        cat.hello();//</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;传统方法调用时间为：&quot;+(end-start));//4</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void test03() throws Exception &#123;</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line"></span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object o=cla.newInstance();</span><br><span class="line"></span><br><span class="line">    Method method01=cla.getMethod(methodName);</span><br><span class="line"></span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        method01.invoke(o);</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;反射调用时间为：&quot;+(end-start));//260</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//反射调优优化-关闭访问检查</span><br><span class="line">//1.Method和Field、Constructor对象都有setAccessible()方法</span><br><span class="line">//2.setAccessible作用是启动和禁用访问安全检查的开关</span><br><span class="line">//3.参数值为true表示 反射的对象在使用时取消访问检查，提高反射的效率</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test04() throws Exception &#123;</span><br><span class="line">    Properties properties=new Properties();</span><br><span class="line">    properties.load(new FileInputStream(&quot;src\\test.properties&quot;));</span><br><span class="line">    String classfullpath=properties.get(&quot;classfullpath&quot;).toString();</span><br><span class="line">    String methodName=properties.get(&quot;method&quot;).toString();</span><br><span class="line"></span><br><span class="line">    Class cla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object o=cla.newInstance();</span><br><span class="line"></span><br><span class="line">    Method method01=cla.getMethod(methodName);</span><br><span class="line">    method01.setAccessible(true);//关闭安全检查</span><br><span class="line">    long start=System.currentTimeMillis();</span><br><span class="line">    for(int i=0;i&lt;90000000;i++)&#123;</span><br><span class="line">        method01.invoke(o);</span><br><span class="line">    &#125;</span><br><span class="line">    long end=System.currentTimeMillis();</span><br><span class="line">    System.out.println(&quot;反射关闭安全检查后调用时间为：&quot;+(end-start));//180</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Class类分析"><a href="#Class类分析" class="headerlink" title="Class类分析"></a>Class类分析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//1.Class也是类，因此继承object类</span><br><span class="line">//2.Class类对象不是new出来的，而是系统创建的</span><br><span class="line">//3.对于某个类的Class对象，在内存中只有一份，因此类只加载一次</span><br><span class="line">//4.每个类的实例都会记得自己是由哪个Class实例所生成</span><br><span class="line">//5.通过Class对象可以完整的得到一个类的完整结构，通过一系列API</span><br><span class="line">//6.Class对象是存放在堆的</span><br><span class="line">//7.类的字节码二进制数据，是放在方法区的，有的地方称为类的元数据</span><br><span class="line">//(包括方法，变量名，方法名，访问权限等)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Class常用方法"><a href="#Class常用方法" class="headerlink" title="Class常用方法"></a>Class常用方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test05() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Car&quot;;</span><br><span class="line">    //获取到Car类对应的Class对象</span><br><span class="line">    //&lt;?&gt;表示类型不确定</span><br><span class="line">    Class&lt;?&gt; cla=Class.forName(classfullpath);</span><br><span class="line">    //cla对象 是哪个类的Class对象</span><br><span class="line">    System.out.println(cla);//class com.mingren.Car</span><br><span class="line">    //cla运行类型</span><br><span class="line">    System.out.println(cla.getClass());//class java.lang.Class</span><br><span class="line">    //包名</span><br><span class="line">    System.out.println(cla.getPackage().getName());//com.mingren</span><br><span class="line">    //全类名</span><br><span class="line">    System.out.println(cla.getName());//com.mingren.Car</span><br><span class="line">    //通过cla创建话对象实例</span><br><span class="line">    Object object = cla.newInstance();</span><br><span class="line">    System.out.println(object);//object.toString</span><br><span class="line">    //通过反射获取属性</span><br><span class="line">    Field Fieldname = cla.getField(&quot;name&quot;);</span><br><span class="line">    System.out.println(Fieldname.get(object));</span><br><span class="line">    //通过反射给属性赋值</span><br><span class="line">    Fieldname.set(object,&quot;奔驰&quot;);</span><br><span class="line">    System.out.println(Fieldname.get(object));</span><br><span class="line">    //所有的字段属性</span><br><span class="line">    Field[] fields = cla.getFields();</span><br><span class="line">    for (Field f : fields) &#123;</span><br><span class="line">        System.out.println(f.getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取Class对象六种方式"><a href="#获取Class对象六种方式" class="headerlink" title="获取Class对象六种方式"></a>获取Class对象六种方式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test06() throws ClassNotFoundException &#123;</span><br><span class="line">    //获取class对象六种方式</span><br><span class="line">    //1. Class.forName()</span><br><span class="line">    String classfullpath=&quot;com.mingren.Cat&quot;;</span><br><span class="line">    Class&lt;?&gt; cla=Class.forName(classfullpath);</span><br><span class="line">    System.out.println(cla);</span><br><span class="line"></span><br><span class="line">    //2.类名.class  用于参数传递</span><br><span class="line">    Class cla2=Cat.class;</span><br><span class="line">    System.out.println(cla2);</span><br><span class="line"></span><br><span class="line">    //3.对象.getclass()  用于有对象实例</span><br><span class="line">    Cat cat=new Cat();</span><br><span class="line">    Class cla3 = cat.getClass();</span><br><span class="line">    System.out.println(cla3);</span><br><span class="line"></span><br><span class="line">    //4.通过类加载器获取到类的class对象</span><br><span class="line">    //先得到类加载器</span><br><span class="line">    ClassLoader classLoader=cat.getClass().getClassLoader();</span><br><span class="line">    //通过类加载器得到Class对象</span><br><span class="line">    Class cla4=classLoader.loadClass(classfullpath);</span><br><span class="line">    System.out.println(cla4);</span><br><span class="line">    //cla1-4 其实都是一个Class对象</span><br><span class="line">    System.out.println(cla.hashCode());</span><br><span class="line">    System.out.println(cla2.hashCode());</span><br><span class="line">    System.out.println(cla3.hashCode());</span><br><span class="line">    System.out.println(cla4.hashCode());</span><br><span class="line"></span><br><span class="line">    //5.基本数据类型得到Class对象</span><br><span class="line">    Class&lt;Integer&gt; integerClass = int.class;</span><br><span class="line">    Class&lt;Character&gt; characterClass = char.class;</span><br><span class="line">    Class&lt;Boolean&gt; booleanClass = boolean.class;</span><br><span class="line">    System.out.println(integerClass);</span><br><span class="line"></span><br><span class="line">    //6.基本数据类型对应的包装类，可以通过.TYPE得到Class对象</span><br><span class="line">    Class&lt;Integer&gt; integerClass1 = Integer.TYPE;</span><br><span class="line">    Class&lt;Character&gt; characterClass1 = Character.TYPE;</span><br><span class="line"></span><br><span class="line">    System.out.println(integerClass1.hashCode());</span><br><span class="line">    System.out.println(integerClass.hashCode());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="哪些类型有Class对象"><a href="#哪些类型有Class对象" class="headerlink" title="哪些类型有Class对象"></a>哪些类型有Class对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    外部类，成员内部类，静态内部类，局部内部类，匿名内部类。</span><br><span class="line">    interface：接口</span><br><span class="line">    数组</span><br><span class="line">    enum：枚举</span><br><span class="line">    annotation：注解</span><br><span class="line">    基本数据类型</span><br><span class="line">    void</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+
+<h2 id="动静态加载"><a href="#动静态加载" class="headerlink" title="动静态加载"></a>动静态加载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    静态加载：编译时加载相关的类，如果没有报错，依赖性太强</span><br><span class="line">    动态加载：运行时加载需要的类，如果运行时不使用该类，即使不存在，也不报错，降低依赖性</span><br><span class="line"></span><br><span class="line">    类加载时机：</span><br><span class="line">    1.当创建对象时(new)</span><br><span class="line">    2.当子类被加载时</span><br><span class="line">    3.调用类中的静态成员时</span><br><span class="line">    4.通过反射</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+
+<h2 id="通过反射获取类的结构信息一"><a href="#通过反射获取类的结构信息一" class="headerlink" title="通过反射获取类的结构信息一"></a>通过反射获取类的结构信息一</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test07() throws ClassNotFoundException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Person&quot;;</span><br><span class="line">    Class&lt;?&gt; PerClass = Class.forName(classfullpath);</span><br><span class="line">    //获得全类名</span><br><span class="line">    System.out.println(&quot;全类名:&quot;+PerClass.getName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得简单类名</span><br><span class="line">    System.out.println(&quot;简单类名:&quot;+PerClass.getSimpleName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得public修饰的所有属性 本类以及父类</span><br><span class="line">    Field[] fields = PerClass.getFields();</span><br><span class="line">    for (Field field : fields) &#123;</span><br><span class="line">        System.out.println(&quot;public修饰的所有属性 本类以及父类:&quot;+field.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类中所有属性 不包含父类</span><br><span class="line">    Field[] declaredFields = PerClass.getDeclaredFields();</span><br><span class="line">    for (Field declaredField : declaredFields) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性 不包含父类:&quot;+declaredField.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类中所有属性 包含所有的父类</span><br><span class="line">    Method[] methods = PerClass.getMethods();</span><br><span class="line">    for (Method method : methods) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性 包含所有的父类:&quot;+method.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类所有方法</span><br><span class="line">    Method[] declaredMethods = PerClass.getDeclaredMethods();</span><br><span class="line">    for (Method declaredMethod : declaredMethods) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有方法:&quot;+declaredMethod.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获得所有public修饰的构造器 不包括父类</span><br><span class="line">    Constructor&lt;?&gt;[] constructors = PerClass.getConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; constructor : constructors) &#123;</span><br><span class="line">        System.out.println(&quot;所有public修饰的构造器 不包括父类:&quot;+constructor.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //获取本类所有的构造器</span><br><span class="line">    Constructor&lt;?&gt;[] declaredConstructors = PerClass.getDeclaredConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; declaredConstructor : declaredConstructors) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有的构造器:&quot;+declaredConstructor.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回包信息</span><br><span class="line">    System.out.println(&quot;包信息:&quot;+PerClass.getPackage());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回父类信息</span><br><span class="line">    Class&lt;?&gt; superclass = PerClass.getSuperclass();</span><br><span class="line">    System.out.println(&quot;父类信息&quot;+superclass.getName());</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //以Class[]形式返回接口信息</span><br><span class="line">    Class&lt;?&gt;[] interfaces = PerClass.getInterfaces();</span><br><span class="line">    for (Class&lt;?&gt; anInterface : interfaces) &#123;</span><br><span class="line">        System.out.println(&quot;接口信息&quot;+anInterface.getName());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(&quot;***************************&quot;);</span><br><span class="line">    //返回注解信息</span><br><span class="line">    Annotation[] annotations = PerClass.getAnnotations();</span><br><span class="line">    for (Annotation annotation : annotations) &#123;</span><br><span class="line">        System.out.println(&quot;注解信息:&quot;+annotation);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="通过反射获取类的结构信息二"><a href="#通过反射获取类的结构信息二" class="headerlink" title="通过反射获取类的结构信息二"></a>通过反射获取类的结构信息二</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//说明：1.默认修饰符是0，public是1，private是2，protected是4，static是8，final是16，</span><br><span class="line">//       若同时存在多个 则相加(public static)--&gt;1+8=9</span><br><span class="line">//getType：以Class形式返回类型</span><br><span class="line">//getName：返回属性名</span><br><span class="line">//getParameterTypes返回形参列表 如果空参 则不执行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test08() throws ClassNotFoundException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Person&quot;;</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; PerClass = Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Field[] declaredFields = PerClass.getDeclaredFields();</span><br><span class="line">    for (Field declaredField : declaredFields) &#123;</span><br><span class="line">        System.out.println(&quot;本类中所有属性：&quot;+declaredField</span><br><span class="line">        +&quot; 该属性的修饰符值：&quot;+declaredField.getModifiers()</span><br><span class="line">        +&quot; 该属性的类型：&quot;+declaredField.getType()</span><br><span class="line">            );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Method[] declaredMethods = PerClass.getDeclaredMethods();</span><br><span class="line">    for (Method declaredMethod : declaredMethods) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有方法:&quot;+declaredMethod.getName()</span><br><span class="line">        +&quot; 该方法的修饰符值：&quot;+declaredMethod.getModifiers()</span><br><span class="line">        +&quot; 该方法的返回值类型：&quot;+declaredMethod.getReturnType()</span><br><span class="line">            );</span><br><span class="line">        Class&lt;?&gt;[] parameterTypes = declaredMethod.getParameterTypes();</span><br><span class="line">        for (Class&lt;?&gt; parameterType : parameterTypes) &#123;</span><br><span class="line">            System.out.println(&quot;参数类型为：&quot;+parameterType);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Constructor&lt;?&gt;[] declaredConstructors = PerClass.getDeclaredConstructors();</span><br><span class="line">    for (Constructor&lt;?&gt; declaredConstructor : declaredConstructors) &#123;</span><br><span class="line">        System.out.println(&quot;本类所有的构造器:&quot; + declaredConstructor.getName());</span><br><span class="line">        Class&lt;?&gt;[] parameterTypes = declaredConstructor.getParameterTypes();</span><br><span class="line">        for (Class&lt;?&gt; parameterType : parameterTypes) &#123;</span><br><span class="line">            System.out.println(&quot;参数类型为：&quot; + parameterType);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="通过反射创建对象"><a href="#通过反射创建对象" class="headerlink" title="通过反射创建对象"></a>通过反射创建对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test09() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException &#123;</span><br><span class="line">    //先获取User类的Class对象</span><br><span class="line">    String classfullpath=&quot;com.mingren.User&quot;;</span><br><span class="line">    Class Usecla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    //1.通过public的无参构造器创建实例</span><br><span class="line">    Object object = Usecla.newInstance();</span><br><span class="line">    System.out.println(object);</span><br><span class="line"></span><br><span class="line">    //2.通过public的有参构造器创建实例</span><br><span class="line">    //2.1先得到对应的构造器</span><br><span class="line">    Constructor constructor = Usecla.getConstructor(String.class,int.class);</span><br><span class="line">    //2.2创建实例，并传入实参</span><br><span class="line">    Object object1 = constructor.newInstance(&quot;mr&quot;,19);</span><br><span class="line">    System.out.println(object1);</span><br><span class="line"></span><br><span class="line">    //3.通过非public的有参构造器创建实例</span><br><span class="line">    //3.1先得到对应的构造器</span><br><span class="line">    Constructor constructor1 = Usecla.getDeclaredConstructor(int.class, String.class);</span><br><span class="line">    //创建实例</span><br><span class="line">    constructor1.setAccessible(true);//爆破</span><br><span class="line"></span><br><span class="line">    Object object2 = constructor1.newInstance(20, &quot;zz&quot;);</span><br><span class="line">    System.out.println(object2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射爆破操作属性"><a href="#反射爆破操作属性" class="headerlink" title="反射爆破操作属性"></a>反射爆破操作属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test10() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException &#123;</span><br><span class="line">    String classfullpath=&quot;com.mingren.Student&quot;;</span><br><span class="line">    Class Stucla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">    Object object = Stucla.newInstance();</span><br><span class="line"></span><br><span class="line">    //使用反射得到age属性对象</span><br><span class="line">    Field age = Stucla.getField(&quot;age&quot;);</span><br><span class="line">    age.set(object,19);</span><br><span class="line">    System.out.println(age.get(object));</span><br><span class="line"></span><br><span class="line">    //使用反射操作name属性</span><br><span class="line">    Field Fname = Stucla.getDeclaredField(&quot;name&quot;);</span><br><span class="line"></span><br><span class="line">    Fname.setAccessible(true);//爆破</span><br><span class="line">    Fname.set(object,&quot;mr&quot;);//Fname.set(null,&quot;mr&quot;); 因为name是静态变量 所以可以写成null或者object</span><br><span class="line">    System.out.println(Fname.get(object));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射爆破操作方法"><a href="#反射爆破操作方法" class="headerlink" title="反射爆破操作方法"></a>反射爆破操作方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">    public void test11() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException &#123;</span><br><span class="line">        String classfullpath=&quot;com.mingren.Boss&quot;;</span><br><span class="line">        Class Bocla=Class.forName(classfullpath);</span><br><span class="line"></span><br><span class="line">​    Object object = Bocla.newInstance();</span><br><span class="line">​    Method test2 = Bocla.getMethod(&quot;test2&quot;, String.class);</span><br><span class="line">​    test2.invoke(object,&quot;mr&quot;);</span><br><span class="line"></span><br><span class="line">​    //调用private static的方法</span><br><span class="line">​    Method declaredMethod = Bocla.getDeclaredMethod(&quot;test1&quot;,String.class,int.class,char.class);</span><br><span class="line">​    declaredMethod.setAccessible(true);</span><br><span class="line">​    declaredMethod.invoke(object,&quot;123&quot;,45,&#x27;6&#x27;);</span><br><span class="line"></span><br><span class="line">​    //反射中，如果方法有返回值，则统一返回object，但是他运行类型和方法定义的返回值类型一致</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2021/05/14/%E9%9B%86%E5%90%88/" class="article-date">
@@ -328,19 +412,12 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      集合
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a>
     </h1>
   
 
       </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -800,197 +877,35 @@
 
       
       
-        <div class="page-reward">
-          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
-          <div class="hide_box"></div>
-          <div class="shang_box">
-            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
-            <div class="shang_tit">
-              <p></p>
-            </div>
-            <div class="shang_payimg">
-              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
-            </div>
-              <div class="pay_explain">扫码打赏</div>
-            <div class="shang_payselect">
-              
-                <div class="pay_item checked" data-id="alipay">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/zfbzf.png" alt="支付宝" /></span>
-                </div>
-              
-              
-                <div class="pay_item" data-id="wechat">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/wxzf.png" alt="微信" /></span>
-                </div>
-              
-            </div>
-            <div class="shang_info">
-              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-        <script type="text/javascript">
-          $(".pay_item").click(function(){
-            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
-            var dataid=$(this).attr('data-id');
-            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
-            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
-          });
-          function dashangToggle(){
-            
-            $(".hide_box").fadeToggle();
-            $(".shang_box").fadeToggle();
-          }
-        </script>
+    </div>
+    
+    <div class="article-info article-info-index">
       
+      
+
+      
+      
+      <div class="clearfix"></div>
     </div>
     
   </div>
   
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2021年05月14日 - 18时19分</p>
-        <p><span>最后更新:</span>2021年05月14日 - 18时21分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/05/14/%E9%9B%86%E5%90%88/" title="集合">https://mingren1314.github.io/2021/05/14/%E9%9B%86%E5%90%88/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://mingren1314.github.io/2021/05/14/%E9%9B%86%E5%90%88/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-    <a href="/2021/05/14/%E5%8F%8D%E5%B0%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          反射
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%9B%86%E5%90%88"><span class="toc-number">1.1.</span> <span class="toc-text">什么是集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection%E4%BD%93%E7%B3%BB%E9%9B%86%E5%90%88"><span class="toc-number">1.2.</span> <span class="toc-text">Collection体系集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection%E7%88%B6%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">Collection父接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A81"><span class="toc-number">1.3.1.</span> <span class="toc-text">Collection接口的使用1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A82"><span class="toc-number">1.3.2.</span> <span class="toc-text">Collection接口的使用2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E7%94%9F%E7%B1%BB"><span class="toc-number">1.3.3.</span> <span class="toc-text">学生类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collection%E5%AD%90%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.</span> <span class="toc-text">Collection子接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#List%E9%9B%86%E5%90%88"><span class="toc-number">1.4.1.</span> <span class="toc-text">List集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List%E9%9B%86%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A81"><span class="toc-number">1.4.2.</span> <span class="toc-text">List集合的使用1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List%E9%9B%86%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A82"><span class="toc-number">1.4.3.</span> <span class="toc-text">List集合的使用2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.4.4.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayL%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.4.5.</span> <span class="toc-text">ArrayL源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vector"><span class="toc-number">1.4.6.</span> <span class="toc-text">Vector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.4.7.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.4.8.</span> <span class="toc-text">LinkedList源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList%E5%92%8CLinkedList%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.9.</span> <span class="toc-text">ArrayList和LinkedList区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%B1%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text">泛型类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.5.3.</span> <span class="toc-text">泛型接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.4.</span> <span class="toc-text">泛型方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%A5%BD%E5%A4%84"><span class="toc-number">1.5.5.</span> <span class="toc-text">泛型好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88"><span class="toc-number">1.5.6.</span> <span class="toc-text">泛型集合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set%E9%9B%86%E5%90%88"><span class="toc-number">1.6.</span> <span class="toc-text">set集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#set%E5%AD%90%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.6.1.</span> <span class="toc-text">set子接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.6.2.</span> <span class="toc-text">set实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashSet-%E9%87%8D%E7%82%B9"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">HashSet(重点)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TreeSet"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">TreeSet</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map%E9%9B%86%E5%90%88"><span class="toc-number">1.7.</span> <span class="toc-text">Map集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Map%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.7.1.</span> <span class="toc-text">Map实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap-%E9%87%8D%E7%82%B9"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">HashMap(重点)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">HashMap源码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HashSet%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">HashSet源码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hashtable"><span class="toc-number">1.7.1.4.</span> <span class="toc-text">Hashtable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Properties"><span class="toc-number">1.7.1.5.</span> <span class="toc-text">Properties</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TreeMap"><span class="toc-number">1.7.1.6.</span> <span class="toc-text">TreeMap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TreeSet%E6%BA%90%E7%A0%81"><span class="toc-number">1.7.1.7.</span> <span class="toc-text">TreeSet源码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collections%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-number">1.8.</span> <span class="toc-text">Collections工具类</span></a></li></ol></li></ol>
-</div>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
 
 
 
 
 
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-
-    
-        <section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2021/05/14/%E5%8F%8D%E5%B0%84/" title="上一篇: 反射">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/">scanf问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">自定义数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/">指针面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/">进阶指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/">初级指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">初级数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">进阶数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/javaweb%E5%9F%BA%E7%A1%80/">javaweb基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E5%8F%8D%E5%B0%84/">反射</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a></li></ul>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
-
-
-
-    <script>
-        
-    </script>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">

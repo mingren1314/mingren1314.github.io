@@ -3,39 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>指针面试题 | Hexo</title>
+  <title>scanf问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经典指针面试题一维数组整型数组 字符数组 再看一组strlen（求字符串长度）  字符串  再看一组strlen   上面的随机值，我们假设a的一个地址，然后找到向后传，但是并不确定\0的位置  二维数组 总结 笔试题1. 2. 3. 4. 5. 6.  7. 8.指针到这就结束了，希望可以帮助到大家！  2020年11月11日">
+  <meta name="description" content="解决Visual Studio中scanf返回值被忽略问题最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题 总结了如下几种解决方法：方法一（不建议）scanf修改成 scanf_s可以说scanf_s是vs编译器特有的，它认为scanf不安全，所以不允许你用而让你用它自己定义的scanf_s。 方法二开头添加 #define _CRT_SECURE_NO_WARNI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指针面试题">
-<meta property="og:url" content="https://mingren1314.github.io/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:title" content="scanf问题">
+<meta property="og:url" content="https://mingren1314.github.io/2021/05/15/scanf%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="经典指针面试题一维数组整型数组 字符数组 再看一组strlen（求字符串长度）  字符串  再看一组strlen   上面的随机值，我们假设a的一个地址，然后找到向后传，但是并不确定\0的位置  二维数组 总结 笔试题1. 2. 3. 4. 5. 6.  7. 8.指针到这就结束了，希望可以帮助到大家！  2020年11月11日">
+<meta property="og:description" content="解决Visual Studio中scanf返回值被忽略问题最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题 总结了如下几种解决方法：方法一（不建议）scanf修改成 scanf_s可以说scanf_s是vs编译器特有的，它认为scanf不安全，所以不允许你用而让你用它自己定义的scanf_s。 方法二开头添加 #define _CRT_SECURE_NO_WARNI">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122456436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122504352.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122510342.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122516976.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020111112252338.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122530373.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122538210.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122545386.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122553421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122559687.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122606800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122613808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122620450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122626849.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122635481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122641372.png#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020111112264861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122752885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201111122802226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2021-05-14T16:01:02.000Z">
-<meta property="article:modified_time" content="2021-05-14T16:04:30.873Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163700802.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163806293.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163833265.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163850984.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163912522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105163929535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201105164228909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-05-14T16:08:18.000Z">
+<meta property="article:modified_time" content="2021-05-14T16:08:37.155Z">
 <meta property="article:author" content="mingr">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201111122456436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201105163700802.png#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -327,11 +315,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-指针面试题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-scanf问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
-      <time datetime="2021-05-14T16:01:02.000Z" itemprop="datePublished">2021-05-15</time>
+      <a href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2021-05-14T16:08:18.000Z" itemprop="datePublished">2021-05-15</time>
 </a>
     </div>
   
@@ -344,7 +332,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      指针面试题
+      scanf问题
     </h1>
   
 
@@ -361,30 +349,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="经典指针面试题"><a href="#经典指针面试题" class="headerlink" title="经典指针面试题"></a>经典指针面试题</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="整型数组"><a href="#整型数组" class="headerlink" title="整型数组"></a>整型数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122456436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-MOU6uYlG-1605066914849)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605007529715.png)]"></p>
-<h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122504352.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pyam4paJ-1605066914851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605008043640.png)]"></p>
-<p>再看一组strlen（求字符串长度）</p>
-<p><img src="https://img-blog.csdnimg.cn/20201111122510342.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-E5J33lwm-1605066914851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605011430859.png)]"></p>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><img src="https://img-blog.csdnimg.cn/20201111122516976.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-wTBMFenC-1605066914853)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605009964304.png)]"></p>
-<p><img src="https://img-blog.csdnimg.cn/2020111112252338.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-f0X8Ynb7-1605066914854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605012156675.png)]"></p>
-<p>再看一组strlen</p>
-<p><img src="https://img-blog.csdnimg.cn/20201111122530373.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ig2gJone-1605066914854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605011215750.png)]"></p>
-<p><img src="https://img-blog.csdnimg.cn/20201111122538210.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-j3lOxQZ2-1605066914855)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605054191170.png)]"></p>
-<p>上面的随机值，我们假设a的一个地址，然后找到向后传，但是并不确定\0的位置</p>
-<p><img src="https://img-blog.csdnimg.cn/20201111122545386.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uCyOttKi-1605066914856)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605054545632.png)]"></p>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p><img src="https://img-blog.csdnimg.cn/20201111122553421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8KlJx9Uq-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056112101.png)]"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://img-blog.csdnimg.cn/20201111122559687.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ewwo2wbE-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056159163.png)]"></p>
-<h2 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122606800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cmATUzD6-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056563372.png)]"></p>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122613808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-unMeFZuc-1605066914858)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605057141917.png)]"></p>
-<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122620450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-6x5vltBt-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058103942.png)]"></p>
-<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122626849.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dlXwYQX6-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058283653.png)]"></p>
-<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122635481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JfQIPlJF-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058388903.png)]"></p>
-<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122641372.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1Hj63WSH-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058927494.png)]"></p>
-<p><img src="https://img-blog.csdnimg.cn/2020111112264861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-wBr9ivEM-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605059001774.png)]"></p>
-<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122752885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LS5Lh9kL-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605059272575.png)]"></p>
-<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122802226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="066914860)]"><br>指针到这就结束了，希望可以帮助到大家！</p>
+        <h1 id="解决Visual-Studio中scanf返回值被忽略问题"><a href="#解决Visual-Studio中scanf返回值被忽略问题" class="headerlink" title="解决Visual Studio中scanf返回值被忽略问题"></a>解决Visual Studio中scanf返回值被忽略问题</h1><h3 id="最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题"><a href="#最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题" class="headerlink" title="最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题"></a>最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题</h3><p><img src="https://img-blog.csdnimg.cn/20201105163700802.png#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="总结了如下几种解决方法："><a href="#总结了如下几种解决方法：" class="headerlink" title="总结了如下几种解决方法："></a>总结了如下几种解决方法：</h4><p>方法一（不建议）<br>scanf修改成 scanf_s<br>可以说scanf_s是vs编译器特有的，它认为scanf不安全，所以不允许你用而让你用它自己定义的scanf_s。<br><img src="https://img-blog.csdnimg.cn/20201105163806293.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法二<br>开头添加 #define _CRT_SECURE_NO_WARNINGS<br><img src="https://img-blog.csdnimg.cn/20201105163833265.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法三<br>开头添加 #pragma warning(disable:4996)<br><img src="https://img-blog.csdnimg.cn/20201105163850984.png#pic_center" alt="在这里插入图片描述"></p>
+<p>方法四<br>错误提示的原因在与vs中的SDL检查；关闭步骤右键单击工程文件–&gt;属性——–&gt; c/c++ ——&gt;所有选项————&gt; SDL检查选项改为 否<br><img src="https://img-blog.csdnimg.cn/20201105163912522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201105163929535.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <hr>
-<p>2020年11月11日</p>
+<p>转载：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42487738/article/details/104144201">https://blog.csdn.net/qq_42487738/article/details/104144201</a><br>2020年11月5日<br><img src="https://img-blog.csdnimg.cn/20201105164228909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 
       
       
@@ -440,13 +411,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/">指针面试题</a></p>
+        <p><span>本文标题:</span><a href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/">scanf问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2021年05月15日 - 00时01分</p>
-        <p><span>最后更新:</span>2021年05月15日 - 00时04分</p>
+        <p><span>发布时间:</span>2021年05月15日 - 00时08分</p>
+        <p><span>最后更新:</span>2021年05月15日 - 00时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/" title="指针面试题">https://mingren1314.github.io/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://mingren1314.github.io/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/" title="scanf问题">https://mingren1314.github.io/2021/05/15/scanf%E9%97%AE%E9%A2%98/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://mingren1314.github.io/2021/05/15/scanf%E9%97%AE%E9%A2%98/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -459,18 +430,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          文件操作
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">进阶指针</div>
+    <a href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">进制转换</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -481,7 +443,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">经典指针面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">一维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">整型数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">字符数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.3.</span> <span class="toc-text">字符串</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.</span> <span class="toc-text">二维数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%94%E8%AF%95%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">笔试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.4.5.</span> <span class="toc-text">5.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6"><span class="toc-number">1.4.6.</span> <span class="toc-text">6.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7"><span class="toc-number">1.4.7.</span> <span class="toc-text">7.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8"><span class="toc-number">1.4.8.</span> <span class="toc-text">8.</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3Visual-Studio%E4%B8%ADscanf%E8%BF%94%E5%9B%9E%E5%80%BC%E8%A2%AB%E5%BF%BD%E7%95%A5%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">解决Visual Studio中scanf返回值被忽略问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E5%9C%A8%E4%BD%BF%E7%94%A8Visual-Studio%E7%BC%96%E5%86%99c%E8%AF%AD%E8%A8%80%E6%97%B6%E9%81%87%E5%88%B0%E4%BA%86scanf%E8%BF%94%E5%9B%9E%E5%80%BC%E8%A2%AB%E5%BF%BD%E7%95%A5%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.1.</span> <span class="toc-text">最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%BA%86%E5%A6%82%E4%B8%8B%E5%87%A0%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">总结了如下几种解决方法：</span></a></li></ol></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -550,13 +512,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="上一篇: 文件操作">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/" title="下一篇: 进阶指针">
+            <a href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="下一篇: 进制转换">
                 <i class="fa fa-angle-right"></i>
             </a>
         
