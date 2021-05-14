@@ -324,7 +324,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 明明的随机数<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 明明的随机数</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="明明的随机数"><a href="#明明的随机数" class="headerlink" title="明明的随机数"></a>明明的随机数</h1><p>题目描述</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了NN个<span class="number">11</span>到<span class="number">10001000</span>之间的随机整数(N≤<span class="number">100</span>)(N≤<span class="number">100</span>)，对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作。</span><br></pre></td></tr></table></figure>
 
@@ -385,7 +388,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 查找子串<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 查找子串</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="查找子串"><a href="#查找子串" class="headerlink" title="查找子串"></a>查找子串</h1><h2 id="BF"><a href="#BF" class="headerlink" title="BF"></a>BF</h2><p>BF算法  也就是在一个字符串中  查找某一字串的位置</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string a;</span><br><span class="line">	string b;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">	int lena = a.size();</span><br><span class="line">	int lenb = b.size();</span><br><span class="line">	int i=0, j=0;</span><br><span class="line">	while(i&lt;lena&amp;&amp;j&lt;lenb) //a[i]!=&#x27;\0&#x27;&amp;&amp;b[j]!=&#x27;\0&#x27;;</span><br><span class="line">	&#123;</span><br><span class="line">		if (a[i] == b[j])</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			i = i - j + 2;</span><br><span class="line">			j = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (j &gt;= lenb) //a[j]==&#x27;\0&#x27;</span><br><span class="line">		cout &lt;&lt;&quot;匹配的子串位置是&quot;&lt;&lt; i - lenb &lt;&lt; endl;</span><br><span class="line">	else</span><br><span class="line">		cout&lt;&lt;&quot;没有找到&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -439,7 +445,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 排序<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 排序</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><p>题目描述</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用选择法对10个整数从小到大排序。</span><br></pre></td></tr></table></figure>
 
@@ -570,7 +579,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 枚举<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 枚举</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int N,i,j,sum=0;</span><br><span class="line">	cin &gt;&gt; N;</span><br><span class="line">	clock_t start = clock();</span><br><span class="line">	for (i = 2; i &lt;= N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (j = 2; j &lt; i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (i % j == 0)</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">		if (i == j)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">			sum++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;sum;</span><br><span class="line">	clock_t end = clock();</span><br><span class="line">	double time = (double)(end - start);</span><br><span class="line">	cout &lt;&lt;&quot;运行时间为&quot;&lt;&lt; time&lt;&lt;&quot;ms&quot; &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt;&quot;运行时间为&quot;&lt;&lt; time/ CLOCKS_PER_SEC &lt;&lt;&quot;s&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当输入N为500000时，运行时间为40.425s.</p>
@@ -629,7 +641,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 动态内存分配<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 动态内存分配</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h1><h2 id="为什么存在动态内存"><a href="#为什么存在动态内存" class="headerlink" title="为什么存在动态内存"></a>为什么存在动态内存</h2><p><img src="https://img-blog.csdnimg.cn/20201118164227425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-zmwyWztt-1605688806156)(D:\鸣人的笔记\3\1605510705976.png)]"></p>
 <p><img src="https://img-blog.csdnimg.cn/20201118164233551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-nqRFuvkx-1605688758902)(D:\鸣人的笔记\3\1605510728989.png)]"></p>
 <p><img src="https://img-blog.csdnimg.cn/2020111816424059.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-XzpeWAvh-1605688758902)(D:\鸣人的笔记\3\1605510802638.png)]"></p>
@@ -738,7 +753,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 自定义数据类型<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 自定义数据类型</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="自定义数据类型"><a href="#自定义数据类型" class="headerlink" title="自定义数据类型"></a>自定义数据类型</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="结构体的声明"><a href="#结构体的声明" class="headerlink" title="结构体的声明"></a>结构体的声明</h3><h4 id="结构体的基础知识"><a href="#结构体的基础知识" class="headerlink" title="结构体的基础知识"></a>结构体的基础知识</h4><p><img src="https://img-blog.csdnimg.cn/20201114195752944.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-DAjLKbxi-1605354993141)(D:\鸣人的笔记\3\1605190661396.png)]"></p>
 <h4 id="结构的声明"><a href="#结构的声明" class="headerlink" title="结构的声明"></a>结构的声明</h4><p><img src="https://img-blog.csdnimg.cn/20201114195800972.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JALi56xp-1605354993142)(D:\鸣人的笔记\3\1605191015357.png)]"></p>
 <h4 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h4><p><img src="https://img-blog.csdnimg.cn/20201114195807615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-beYAPnlC-1605354993143)(D:\鸣人的笔记\3\1605191268790.png)]"></p>
@@ -849,7 +867,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 进制转换<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 进制转换</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><p>想要熟练的掌握进制转换 首先要明白进制的基本概念。</p>
 <h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2><p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。 对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。在这篇文章中，我们只讨论二进制、八进制、十进制以及十六进制，十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，所以二进制只由0和1组成，以此类推，x进制就是逢x进位。人类天然选择了十进制，十进制编码几乎就是数值本身。（来源：百度（<a target="_blank" rel="noopener" href="https://baike.sogou.com/v775479.htm?fromTitle=%E8%BF%9B%E5%88%B6%EF%BC%89%EF%BC%89">https://baike.sogou.com/v775479.htm?fromTitle=%E8%BF%9B%E5%88%B6））</a></p>
 <p>废话不多说，下面讲进制的转换，为了方便理解，都以一个例题来阐述转换思路</p>
@@ -904,7 +925,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: vs scanf问题<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: vs scanf问题</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="解决Visual-Studio中scanf返回值被忽略问题"><a href="#解决Visual-Studio中scanf返回值被忽略问题" class="headerlink" title="解决Visual Studio中scanf返回值被忽略问题"></a>解决Visual Studio中scanf返回值被忽略问题</h1><h3 id="最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题"><a href="#最近在使用Visual-Studio编写c语言时遇到了scanf返回值被忽略问题" class="headerlink" title="最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题"></a>最近在使用Visual Studio编写c语言时遇到了scanf返回值被忽略问题</h3><p><img src="https://img-blog.csdnimg.cn/20201105163700802.png#pic_center" alt="在这里插入图片描述"></p>
 <h4 id="总结了如下几种解决方法："><a href="#总结了如下几种解决方法：" class="headerlink" title="总结了如下几种解决方法："></a>总结了如下几种解决方法：</h4><p>方法一（不建议）<br>scanf修改成 scanf_s<br>可以说scanf_s是vs编译器特有的，它认为scanf不安全，所以不允许你用而让你用它自己定义的scanf_s。<br><img src="https://img-blog.csdnimg.cn/20201105163806293.png#pic_center" alt="在这里插入图片描述"></p>
 <p>方法二<br>开头添加 #define _CRT_SECURE_NO_WARNINGS<br><img src="https://img-blog.csdnimg.cn/20201105163833265.png#pic_center" alt="在这里插入图片描述"></p>
@@ -955,7 +979,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 指针面试题<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 指针面试题</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="经典指针面试题"><a href="#经典指针面试题" class="headerlink" title="经典指针面试题"></a>经典指针面试题</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="整型数组"><a href="#整型数组" class="headerlink" title="整型数组"></a>整型数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122456436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-MOU6uYlG-1605066914849)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605007529715.png)]"></p>
 <h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122504352.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pyam4paJ-1605066914851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605008043640.png)]"></p>
 <p>再看一组strlen（求字符串长度）</p>
@@ -1023,7 +1050,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 进阶指针<br>date: 2021-05-14 18:19:10<br>tags:</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 进阶指针</span><br><span class="line">date: 2021-05-14 18:19:10</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="进阶指针"><a href="#进阶指针" class="headerlink" title="进阶指针"></a>进阶指针</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">进阶指针--&gt;字符指针</span><br><span class="line">进阶指针--&gt;指针数组</span><br><span class="line">进阶指针--&gt;数组指针</span><br><span class="line">进阶指针--&gt;数组传参和指针传参</span><br><span class="line">进阶指针--&gt;函数指针</span><br><span class="line">进阶指针--&gt;函数指针数组</span><br><span class="line">进阶指针--&gt;指向函数指针数组的指针</span><br><span class="line">进阶指针--&gt;回调函数</span><br><span class="line">进阶指针--&gt;指针和数组面试题的解析</span><br></pre></td></tr></table></figure>
 
 <h2 id="字符指针"><a href="#字符指针" class="headerlink" title="字符指针"></a>字符指针</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><img src="https://img-blog.csdnimg.cn/20201109223203312.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ixpwO5or-1604931815938)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731314126.png)]"></p>
