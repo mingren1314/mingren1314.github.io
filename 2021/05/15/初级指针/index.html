@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初级指针 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初级指针12345678graph LR初级指针--&gt;指针是什么初级指针--&gt;指针和指针类型初级指针--&gt;野指针初级指针--&gt;指针运算初级指针--&gt;指针和数组初级指针--&gt;二级指针初级指针--&gt;指针数组    一.指针是什么？ （指针就是个变量，变量里存的是内存单元的地址） 1.内存 2.代码 3.地址 4.总结 二.指针和指针类型1.指针类型的大小 指针">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初级指针">
+<meta property="og:url" content="https://mingren1314.github.io/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="初级指针12345678graph LR初级指针--&gt;指针是什么初级指针--&gt;指针和指针类型初级指针--&gt;野指针初级指针--&gt;指针运算初级指针--&gt;指针和数组初级指针--&gt;二级指针初级指针--&gt;指针数组    一.指针是什么？ （指针就是个变量，变量里存的是内存单元的地址） 1.内存 2.代码 3.地址 4.总结 二.指针和指针类型1.指针类型的大小 指针">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106213842559.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106213515143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214152291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214201775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214212512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214222161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214232364.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214241535.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214305164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214336737.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214401693.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214531624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214546988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214602199.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214734624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214749342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214758500.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214807805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214819137.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214828356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106214837501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215033172.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215044238.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215057748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215105794.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215113323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215124362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215135634.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215143797.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215152843.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215202652.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020110621521122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215218895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215229443.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215240340.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215249261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215637617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215611953.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215654490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215706331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215716295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215728762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215742693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215802814.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215814195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215825274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215838656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215848492.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215857881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215911965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215921875.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106215931277.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220301183.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220313367.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220325433.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220335436.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220347350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220355426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220406101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220418965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220430907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220439334.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220611445.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220618903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020110622062744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220634334.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220641490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220713523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220730406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201106220751854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-05-14T16:00:38.000Z">
+<meta property="article:modified_time" content="2021-05-14T16:03:01.643Z">
+<meta property="article:author" content="mingr">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201106213842559.png#pic_center">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//img/tx.jpg">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/tx.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/mingren1314" title="github">github</a>
+                            
+                                <a class="fl QQ"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2674672641&site=qq&menu=yes" title="QQ">QQ</a>
+                            
+                                <a class="fl wechat"  target="_blank" href="/img/wx.jpg" title="wechat">wechat</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">性别男 爱好女</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="//img/tx.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/mingren1314" title="github">github</a>
+                    
+                        <a class="QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2674672641&site=qq&menu=yes" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="/img/wx.jpg" title="wechat">wechat</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-初级指针" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/" class="article-date">
+      <time datetime="2021-05-14T16:00:38.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初级指针
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="初级指针"><a href="#初级指针" class="headerlink" title="初级指针"></a>初级指针</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">初级指针--&gt;指针是什么</span><br><span class="line">初级指针--&gt;指针和指针类型</span><br><span class="line">初级指针--&gt;野指针</span><br><span class="line">初级指针--&gt;指针运算</span><br><span class="line">初级指针--&gt;指针和数组</span><br><span class="line">初级指针--&gt;二级指针</span><br><span class="line">初级指针--&gt;指针数组</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="一-指针是什么？"><a href="#一-指针是什么？" class="headerlink" title="一.指针是什么？"></a>一.指针是什么？</h2><p><img src="https://img-blog.csdnimg.cn/20201106213842559.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-TM6CKbIY-1604669688845)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604584668993.png)]"></p>
+<p>（指针就是个变量，变量里存的是内存单元的地址）</p>
+<h3 id="1-内存"><a href="#1-内存" class="headerlink" title="1.内存"></a>1.内存</h3><p><img src="https://img-blog.csdnimg.cn/20201106213515143.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1Tm9PfaL-1604669688847)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604584954164.png)]"></p>
+<h3 id="2-代码"><a href="#2-代码" class="headerlink" title="2.代码"></a>2.代码</h3><p><img src="https://img-blog.csdnimg.cn/20201106214152291.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-eIliytDj-1604669688848)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604585308651.png)]"></p>
+<h3 id="3-地址"><a href="#3-地址" class="headerlink" title="3.地址"></a>3.地址</h3><p><img src="https://img-blog.csdnimg.cn/20201106214201775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uFnKxMfP-1604669688848)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604586644902.png)]"></p>
+<h3 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h3><p><img src="https://img-blog.csdnimg.cn/20201106214212512.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bmSbxON0-1604669688849)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604586726307.png)]"></p>
+<h2 id="二-指针和指针类型"><a href="#二-指针和指针类型" class="headerlink" title="二.指针和指针类型"></a>二.指针和指针类型</h2><h3 id="1-指针类型的大小"><a href="#1-指针类型的大小" class="headerlink" title="1.指针类型的大小"></a>1.指针类型的大小</h3><p><img src="https://img-blog.csdnimg.cn/20201106214222161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FUmbPNLm-1604669688849)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604588857956.png)]"></p>
+<p>指针类型大小在32位操作系统是4个字节，在64位操作系统是8个字节，虽然他们大小相同，但都具有各自的实际意义，下面来探讨一下。</p>
+<h3 id="2-指针的实际意义"><a href="#2-指针的实际意义" class="headerlink" title="2.指针的实际意义"></a>2.指针的实际意义</h3><h4 id="①指针的解引用"><a href="#①指针的解引用" class="headerlink" title="①指针的解引用"></a>①指针的解引用</h4><p><img src="https://img-blog.csdnimg.cn/20201106214232364.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ya1LsRfa-1604669688850)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604589442594.png)]"></p>
+<p>可以看出不管是什么类型的指针，都可以很好的把a的地址存起来，但因为a的地址是int型，此处会报警告，但仍可以把地址存起来。</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214241535.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-EceRLhR9-1604669688850)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604589615890.png)]"></p>
+<p>接下来我们在窗口监视a的地址，让指针pa的地址变为0</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214305164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bh4ESBB3-1604669688850)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604589864091.png)]"></p>
+<p>（此时内存是倒着存放的，这里我们先不作讲解）</p>
+<p>然后我们下一步，看a的地址如何变化</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214336737.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="!](https://img-blog.csdnimg.cn/20201106214313738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center)"></p>
+<p>可以明显看出，a的地址全部变为0。实际是a的地址存在指针pa里，指针pa为0后，a的地址变为0。</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214401693.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-i0JLAg4P-1604669688851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604590382465.png)]"></p>
+<p>下面再看一下字符指针</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214531624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8jkZK3Ib-1604669688852)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604590192302.png)]"></p>
+<p>在窗口里监视a的地址，运行后观察地址变化</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214546988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-anze60eO-1604669688852)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604590278554.png)]"></p>
+<p>由此可以看出，指针有自己的意义，虽然都可以存放地址，但是在进行解引用时有自己的特点。即指针类型决定了指针进行解引用操作时，能够访问空间的大小。（访问字节的大小）</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214602199.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-f4KhgmwI-1604669688852)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604590551249.png)]"></p>
+<h4 id="②指针-整数"><a href="#②指针-整数" class="headerlink" title="②指针+-整数"></a>②指针+-整数</h4><p><img src="https://img-blog.csdnimg.cn/20201106214734624.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>可以看出指针类型决定了指针+1向后跳几个字节</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214749342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-BObuwW6q-1604669688854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604591339849.png)]"></p>
+<p>下面我们用代码研究一下他们的实际意义</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214758500.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-IzntATOE-1604669688854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604591706169.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214807805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-515Doeje-1604669688854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604591792634.png)]"></p>
+<p>把该数组元素全改为1</p>
+<p>那么char类型的指针可以吗</p>
+<p>这里的数组有十个元素，即有40个字节，int类型指针一次可以修改一个整数元素即四个字节，而char类型一次修改一个字节，所以char类型只把两个半字节改为1</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214819137.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-BlHPMWCs-1604669688855)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604592071640.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214828356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-EPHpfX4G-1604669688855)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604592222753.png)]"></p>
+<p>而int*可以把四十个字节全部修改</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106214837501.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-PY6P9aSp-1604669688855)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604592286289.png)]"></p>
+<h2 id="三-野指针"><a href="#三-野指针" class="headerlink" title="三.野指针"></a>三.野指针</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p><img src="https://img-blog.csdnimg.cn/20201106215033172.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Nstgw4cn-1604669688856)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604636233446.png)]"></p>
+<h3 id="2-成因"><a href="#2-成因" class="headerlink" title="2.成因"></a>2.成因</h3><h4 id="①指针未初始化"><a href="#①指针未初始化" class="headerlink" title="①指针未初始化"></a>①指针未初始化</h4><p><img src="https://img-blog.csdnimg.cn/20201106215044238.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-699N2puL-1604669688856)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604636531877.png)]"></p>
+<h4 id="②指针越界访问"><a href="#②指针越界访问" class="headerlink" title="②指针越界访问"></a>②指针越界访问</h4><p><img src="https://img-blog.csdnimg.cn/20201106215057748.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-3DVXeq9X-1604669688857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604636603494.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215105794.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-poye6RRa-1604669688857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604636801301.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215113323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-nHUXARnC-1604669688858)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604638029006.png)]"></p>
+<h4 id="③指针指向的空间释放"><a href="#③指针指向的空间释放" class="headerlink" title="③指针指向的空间释放"></a>③指针指向的空间释放</h4><p><img src="https://img-blog.csdnimg.cn/20201106215124362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-9McFbrTz-1604669688858)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604637092837.png)]"></p>
+<p>解释一下这个程序：</p>
+<p>创建一个test函数，返回a（10）的地址，指针p存储a（10）的地址，但是！当程序结束后，a的地址空间还给系统（空间释放），所以当你再次通过指针p（a的地址）找到这个空间时，你访问的这个空间已经不是这个程序的了。</p>
+<h3 id="3-如何规避野指针"><a href="#3-如何规避野指针" class="headerlink" title="3.如何规避野指针"></a>3.如何规避野指针</h3><p><img src="https://img-blog.csdnimg.cn/20201106215135634.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-owQGPstc-1604669688859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604637324421.png)]"></p>
+<p>下面看一个程序</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215143797.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Oc9YlqrS-1604669688859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604659621621.png)]"></p>
+<p>运行后，可以正确的打印10</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215152843.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-NlBJUzvP-1604669688859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604659750538.png)]"></p>
+<p>但是这个程序有<strong>很大的问题</strong>，细心的人运行程序后会发现，程序没报错，但会有一个警告</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215202652.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-yLIyhlqf-1604669688859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604659706306.png)]"></p>
+<p>我们来讨论一下</p>
+<p><img src="https://img-blog.csdnimg.cn/2020110621521122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-5ZHiG9zQ-1604669688860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604659812986.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215218895.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-jPcGgE6E-1604669688860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604660079803.png)]"></p>
+<p>程序运行，test函数起作用，临时变量a被赋值为0，但是当a的地址被返回后，此处的空间释放，所以当指针p再次访问这个空间时，<strong>没有任何意义</strong>，是<strong>非法</strong>的。</p>
+<p>规避野指针的一个很好的方法可以置之为NULL ，在使用时检查其有效性。</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215229443.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-CnedJ16G-1604669688861)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604660588314.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215240340.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-b4OCAqXw-1604669688862)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604660765941.png)]"></p>
+<p>可见当将一个指针置为NULL时，再去访问一个空间程序会崩溃</p>
+<p>所以在使用时，可以先判断一下有效性再进行使用</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215249261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-GjSEfHJU-1604669688863)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604660858353.png)]"></p>
+<h2 id="四-指针运算"><a href="#四-指针运算" class="headerlink" title="四.指针运算"></a>四.指针运算</h2><h3 id="1-指针-整数"><a href="#1-指针-整数" class="headerlink" title="1.指针+-整数"></a>1.指针+-整数</h3><p><img src="https://img-blog.csdnimg.cn/20201106215637617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215611953.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-L1chzcQv-1604669688863)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604662233569.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215654490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-kLXU9jZN-1604669688864)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604662357369.png)]"></p>
+<p>也可以倒着输出</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215706331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8mAOiMJv-1604669688864)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604662429913.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215716295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-yuSm0HNf-1604669688864)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604662469792.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215728762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-M8GR21V1-1604669688864)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604662871329.png)]"></p>
+<h3 id="2-指针-指针"><a href="#2-指针-指针" class="headerlink" title="2.指针-指针"></a>2.指针-指针</h3><p>指针-指针也就是地址-地址</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215742693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-CAhPUIiP-1604669688865)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663025872.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215802814.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-aftCJ7mr-1604669688865)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663076792.png)]"></p>
+<p>可以看出指针-指针（地址-地址）得到的实际是两个指针之间元素的个数（ps：指针相减要用大的减去小的，否则会是负数）</p>
+<p>有一个误区：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215814195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-22iZYH63-1604669688866)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663273049.png)]"></p>
+<p>可以看出，指针相减必须指向同一块空间，否则会出错。</p>
+<p>下面实用一下   <strong>使用指针-指针实现strlen求字符串长度</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215825274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ojwRRsaN-1604669688866)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663714960.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215838656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-vXVXoZe1-1604669688867)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663805448.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215848492.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-xmVQwXmx-1604669688867)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604663765152.png)]"></p>
+<h3 id="3-指针的关系运算"><a href="#3-指针的关系运算" class="headerlink" title="3.指针的关系运算"></a>3.指针的关系运算</h3><p>指针的关系运算也就是比较大小</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215857881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-d7LItlPW-1604669688868)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604664469856.png)]"></p>
+<p>前置–，所以vp先向前走一步，再解引用赋值为0，然后循环运行</p>
+<p>接下来将这个代码进行简化</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215911965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-SCNEcyBc-1604669688868)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604664659880.png)]"></p>
+<p>但是我们应避免第二种写法，因为标准并不代表它可行</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215921875.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-6ler2c8k-1604669688868)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604664730447.png)]"></p>
+<p>来解释一下这个规定</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106215931277.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZE24DUHH-1604669688869)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604664912591.png)]"></p>
+<p>假设现在有一个数组arr，p1是某个元素的地址，p2是最后一个元素后面那个元素的地址，p3是第一个元素前面那个地址。规定即允许p1与p2比较，但不允许p1与p3比较。</p>
+<h2 id="五-指针和数组"><a href="#五-指针和数组" class="headerlink" title="五.指针和数组"></a>五.指针和数组</h2><p><img src="https://img-blog.csdnimg.cn/20201106220301183.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ja7mCl4T-1604669688869)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665408271.png)]"></p>
+<p>可以看出数组名表示的是首元素的地址，但并不是所有的数组名都表示首元素地址，有两个特殊情况</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220313367.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-W0IYJSS2-1604669688869)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665466670.png)]"></p>
+<p>下面来讲解一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220325433.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZBPL9UKO-1604669688870)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665492215.png)]"></p>
+<p>可以看到第一行和第二行输出的是首元素地址，第三行输出的是整个数组的地址，但是为什么地址相同呢，该怎么理解呢</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220335436.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bO1JHRLQ-1604669688870)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665640591.png)]"></p>
+<p>可以清晰看出，整个数组的地址也是从第一个元素开始，所以从数值上看是相同的，但是意义却不相同，下面来看一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220347350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-H7baH1re-1604669688870)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665727799.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220355426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-a83CsI3E-1604669688871)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604665877791.png)]"></p>
+<p>所以知道了之后，下面来进行实用</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220406101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-GNTO6TG5-1604669688872)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666209111.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220418965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-mrSLc7ez-1604669688872)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666150926.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220430907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8S9p9pcg-1604669688872)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666293199.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220439334.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-USuy7nZA-1604669688873)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666318558.png)]"></p>
+<h2 id="六-二级指针"><a href="#六-二级指针" class="headerlink" title="六.二级指针"></a>六.二级指针</h2><p><img src="https://img-blog.csdnimg.cn/20201106220611445.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZvvcyDkR-1604669688873)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666441998.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220618903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FOZSge06-1604669688873)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666724783.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110622062744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ssQwLwf0-1604669688873)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604666747279.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220634334.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-qzllhJlB-1604669688874)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604667083031.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220641490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-r3UE4fWt-1604669688874)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604667143855.png)]"></p>
+<h2 id="七-指针数组"><a href="#七-指针数组" class="headerlink" title="七.指针数组"></a>七.指针数组</h2><p>指针数组本质是个数组，数组指针本质上是指针</p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220713523.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-eCqKQfqD-1604669688875)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604667261014.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220730406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-jXgY3ybA-1604669688875)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604667343694.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201106220751854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-iFw1HWAh-1604669688875)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604667319895.png)]"></p>
+<p>初级指针就介绍到这里，想继续学习可以看进阶指针，但要踏踏实实一步一步向前走，加油！</p>
+<hr>
+<p>作者：吕文康<br>学校：山东第一医科大学<br>2020年11月6日</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p></p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/zfbzf.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wxzf.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/">初级指针</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2021年05月15日 - 00时00分</p>
+        <p><span>最后更新:</span>2021年05月15日 - 00时03分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/" title="初级指针">https://mingren1314.github.io/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://mingren1314.github.io/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          进阶指针
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初级数据结构</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88"><span class="toc-number">1.</span> <span class="toc-text">初级指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%8C%87%E9%92%88%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">一.指针是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%85%E5%AD%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9C%B0%E5%9D%80"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">二.指针和指针类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.指针类型的大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8C%87%E9%92%88%E7%9A%84%E5%AE%9E%E9%99%85%E6%84%8F%E4%B9%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.指针的实际意义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A0%E6%8C%87%E9%92%88%E7%9A%84%E8%A7%A3%E5%BC%95%E7%94%A8"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">①指针的解引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A1%E6%8C%87%E9%92%88-%E6%95%B4%E6%95%B0"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">②指针+-整数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E9%87%8E%E6%8C%87%E9%92%88"><span class="toc-number">1.3.</span> <span class="toc-text">三.野指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%88%90%E5%9B%A0"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.成因</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A0%E6%8C%87%E9%92%88%E6%9C%AA%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">①指针未初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A1%E6%8C%87%E9%92%88%E8%B6%8A%E7%95%8C%E8%AE%BF%E9%97%AE"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">②指针越界访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A2%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E7%9A%84%E7%A9%BA%E9%97%B4%E9%87%8A%E6%94%BE"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">③指针指向的空间释放</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E8%A7%84%E9%81%BF%E9%87%8E%E6%8C%87%E9%92%88"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.如何规避野指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="toc-number">1.4.</span> <span class="toc-text">四.指针运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8C%87%E9%92%88-%E6%95%B4%E6%95%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.指针+-整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8C%87%E9%92%88-%E6%8C%87%E9%92%88"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.指针-指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8C%87%E9%92%88%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.指针的关系运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">五.指针和数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88"><span class="toc-number">1.6.</span> <span class="toc-text">六.二级指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="toc-number">1.7.</span> <span class="toc-text">七.指针数组</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/" title="上一篇: 进阶指针">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="下一篇: 初级数据结构">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/">指针面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/">进阶指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/">初级指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">初级数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">进阶数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/javaweb%E5%9F%BA%E7%A1%80/">javaweb基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E5%8F%8D%E5%B0%84/">反射</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 mingr
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
