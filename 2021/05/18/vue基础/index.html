@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue基础入门vue官方文档：https:&#x2F;&#x2F;cn.vuejs.org&#x2F;v2&#x2F;guide&#x2F; 第一个vue程序Vue.js 最简单的方法是使用 Hello World 例子。你可以在浏览器新标签页中打开它，跟着例子学习一些基础用法。或者你也可以创建一个 .html 文件，然后通过如下方式引入 Vue： 12&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;&lt;script sr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue基础">
+<meta property="og:url" content="https://mingren1314.github.io/2021/05/18/vue%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue基础入门vue官方文档：https:&#x2F;&#x2F;cn.vuejs.org&#x2F;v2&#x2F;guide&#x2F; 第一个vue程序Vue.js 最简单的方法是使用 Hello World 例子。你可以在浏览器新标签页中打开它，跟着例子学习一些基础用法。或者你也可以创建一个 .html 文件，然后通过如下方式引入 Vue： 12&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;&lt;script sr">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-18T14:04:30.000Z">
+<meta property="article:modified_time" content="2021-05-18T14:06:17.336Z">
+<meta property="article:author" content="mingr">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//img/tx.jpg">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: true
+      }
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/tx.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="https://mingren1314.github.io/archives/">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/mingren1314" title="github">github</a>
+                            
+                                <a class="fl QQ"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2674672641&site=qq&menu=yes" title="QQ">QQ</a>
+                            
+                                <a class="fl wechat"  target="_blank" href="/img/wx.jpg" title="wechat">wechat</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">性别男 爱好女</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="//img/tx.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="https://mingren1314.github.io/archives/">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/mingren1314" title="github">github</a>
+                    
+                        <a class="QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2674672641&site=qq&menu=yes" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="/img/wx.jpg" title="wechat">wechat</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-vue基础" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/18/vue%E5%9F%BA%E7%A1%80/" class="article-date">
+      <time datetime="2021-05-18T14:04:30.000Z" itemprop="datePublished">2021-05-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue基础
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="vue基础入门"><a href="#vue基础入门" class="headerlink" title="vue基础入门"></a>vue基础入门</h1><p><strong>vue官方文档</strong>：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">https://cn.vuejs.org/v2/guide/</a></p>
+<h2 id="第一个vue程序"><a href="#第一个vue程序" class="headerlink" title="第一个vue程序"></a>第一个vue程序</h2><p>Vue.js 最简单的方法是使用 <a target="_blank" rel="noopener" href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world">Hello World 例子</a>。你可以在浏览器新标签页中打开它，跟着例子学习一些基础用法。或者你也可以<a target="_blank" rel="noopener" href="https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html">创建一个 <code>.html</code> 文件</a>，然后通过如下方式引入 Vue：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app = new Vue(&#123;</span><br><span class="line">  el: &#x27;#app&#x27;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &#x27;Hello Vue!&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>全部代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;title&gt;我爱中国&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &#123;&#123; message &#125;&#125;</span><br><span class="line"></span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app = new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​    el: &#x27;#app&#x27;,</span><br><span class="line"></span><br><span class="line">​    data: &#123;</span><br><span class="line"></span><br><span class="line">​     message: &quot; 你好中国 &quot;</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="el挂载点"><a href="#el挂载点" class="headerlink" title="el挂载点"></a>el挂载点</h2><p><strong>Vue实例的作用范围：</strong>el命中的元素及其内部的后代元素</p>
+<p><strong>是否可以使用其他选择器：</strong>可以 但推荐使用默认的id选择器</p>
+<p><strong>是否可以设置其他的dom元素：</strong>可以，但不能使用HTML和body</p>
+<h2 id="data数据对象"><a href="#data数据对象" class="headerlink" title="data数据对象"></a>data数据对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &#123;&#123; message &#125;&#125;</span><br><span class="line"></span><br><span class="line">​    &lt;h2&gt;&#123;&#123; school.name &#125;&#125; &#123;&#123; school.mobile&#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;ul&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;li&gt;&#123;&#123;campus[1]&#125;&#125;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app = new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​    el: &#x27;#app&#x27;,</span><br><span class="line"></span><br><span class="line">​    //el:&quot;.app&quot;,</span><br><span class="line"></span><br><span class="line">​    data: &#123;</span><br><span class="line"></span><br><span class="line">​     message: &quot; 你 好 中 国 &quot;,</span><br><span class="line"></span><br><span class="line">​     school:&#123;</span><br><span class="line"></span><br><span class="line">​      name:&quot;mr&quot;,</span><br><span class="line"></span><br><span class="line">​      mobile:&quot;123456&quot;</span><br><span class="line"></span><br><span class="line">​     &#125;,</span><br><span class="line"></span><br><span class="line">​     campus:[&quot;北京&quot;,&quot;上海&quot;,&quot;深圳&quot;]</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h2><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;h2 v-text=&quot;message&quot;&gt;ww&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;h2 v-text=&quot;info&quot;&gt;ww&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        message:&quot;mrrrrrrrr&quot;,</span><br><span class="line"></span><br><span class="line">​        info:&quot;111112222&quot;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样标签后面不管有什么(例如上面后面的ww)都会被消除掉 所以可以用双对大括号来解决</p>
+<p><code>&lt;h2&gt;&#123;&#123;message&#125;&#125;ww&lt;/h2&gt;</code></p>
+<p>拼接字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2 v-text=&quot;message+&#x27;!&#x27;&quot;&gt;ww&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;h2 v-text=&quot;info+&#x27;!&#x27;&quot;&gt;ww&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;h2&gt;&#123;&#123;message+&#x27;!&#x27;&#125;&#125;ww&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>内容中有html结构会被解析成标签</p>
+<p>v-text只会解析为文本</p>
+<p>两者其他一样，酌情选择</p>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>为元素绑定事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;v-on指令&quot; v-on:click=&quot;doIt&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;v-on指令简写&quot; v-on:click=&quot;doIt&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;双击事件&quot; @dblclick=&quot;doIt&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">  var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​    el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​    methods:&#123;</span><br><span class="line"></span><br><span class="line">​      doIt:function()&#123;</span><br><span class="line"></span><br><span class="line">​        alert(&quot;555&quot;);</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果要更改页面元素，不需要操作dom元素，数据改变，页面就改变，所以改变数据就可以</p>
+<p> ·&lt;h2 @click=”changefood”&gt;·</p>
+<p>changefood:function(){</p>
+<p>​        this.food=”666”;</p>
+<p>​      }</p>
+<h3 id="计数器实例"><a href="#计数器实例" class="headerlink" title="计数器实例"></a>计数器实例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;-&quot; @click=&quot;subnumber&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;span&gt;&#123;&#123;begin&#125;&#125;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;+&quot; @click=&quot;addnumber&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        begin:&quot;10&quot;</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        addnumber:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.begin++</span><br><span class="line"></span><br><span class="line">​        &#125;,</span><br><span class="line"></span><br><span class="line">​        subnumber:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.begin--</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>根据表达式真假，判断元素是否显示</p>
+<p>原理是修改元素的display</p>
+<p>指令后面的内容，都会被解析为布尔值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;切换显示&quot; @click=&quot;changeisshow&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;+年龄&quot; @click=&quot;addage&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;img v-show=&quot;isshow&quot; src=&quot;./cc.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;img v-show=&quot;age&gt;=18&quot; src=&quot;./cc.png&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        age:&quot;17&quot;,</span><br><span class="line"></span><br><span class="line">​        isshow:false</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        changeisshow:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.isshow=!this.isshow</span><br><span class="line"></span><br><span class="line">​        &#125;,</span><br><span class="line"></span><br><span class="line">​        addage:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.age++</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;切换显示&quot; @click=&quot;isshowchange&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p v-if=&quot;isshow&quot;&gt;mrrrrrrr&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        isshow:false,</span><br><span class="line"></span><br><span class="line">​        age:18</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        isshowchange:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.isshow=!this.isshow</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>v-if本质是通过操作dom元素来切换显示状态</p>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">### &lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;img v-bind:src=&quot;imgsrc&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">        &lt;img :src=&quot;imgsrc&quot; alt=&quot;&quot; :title=&quot;imgtitle&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">        &lt;img :src=&quot;imgsrc&quot; alt=&quot;&quot; :title=&quot;imgtitle&quot; :class=&quot;&#123;active:isactive&#125;&quot; @click=&quot;changeisactive&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        imgsrc:&quot;http://www.itheima.com/images/logo.png&quot;,</span><br><span class="line"></span><br><span class="line">​        imgtitle:&quot;wuhu&quot;,</span><br><span class="line"></span><br><span class="line">​        isactive:false</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        changeisactive:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.isactive=!this.isactive</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>v-bind作用是为元素绑定属性</p>
+<p>完整写法：v-bind：属性名</p>
+<p>简写可以省略v-bind</p>
+<h3 id="图片切换实例"><a href="#图片切换实例" class="headerlink" title="图片切换实例"></a>图片切换实例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"> &lt;body&gt;</span><br><span class="line"></span><br><span class="line">   &lt;div id=&quot;mask&quot;&gt;</span><br><span class="line"></span><br><span class="line">       &lt;div class=&quot;center&quot;&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;h2 class=&quot;title&quot;&gt;</span><br><span class="line"></span><br><span class="line">               &lt;img src=&quot;./logo.jpg&quot; alt=&quot;&quot;&gt;</span><br><span class="line"></span><br><span class="line">​        测试图片切换</span><br><span class="line"></span><br><span class="line">​      &lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">           &lt;img :src=&quot;imgarr[index]&quot; alt=&quot;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">           &lt;a href=&quot;javascript:void(0)&quot; v-show=&quot;index!=0&quot; @click=&quot;prev&quot; class=&quot;left&quot;&gt;</span><br><span class="line"></span><br><span class="line">               &lt;img src=&quot;./prev.png&quot; alt=&quot;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/a&gt;</span><br><span class="line"></span><br><span class="line">           &lt;a href=&quot;javascript:void(0)&quot; v-show=&quot;index&lt;imgarr.length-1&quot; @click=&quot;next&quot; class=&quot;right&quot;&gt;</span><br><span class="line"></span><br><span class="line">               &lt;img src=&quot;./next.png&quot; alt=&quot;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/a&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​    el:&quot;#mask&quot;,</span><br><span class="line"></span><br><span class="line">​    data:&#123;</span><br><span class="line"></span><br><span class="line">​      imgarr:[</span><br><span class="line"></span><br><span class="line">​      &quot;./00.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./01.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./02.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./03.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./04.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./05.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./06.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      &quot;./07.jpg&quot;,</span><br><span class="line"></span><br><span class="line">​      ],</span><br><span class="line"></span><br><span class="line">​      index:0</span><br><span class="line"></span><br><span class="line">​    &#125;,</span><br><span class="line"></span><br><span class="line">​    methods:&#123;</span><br><span class="line"></span><br><span class="line">​      prev:function()&#123;</span><br><span class="line"></span><br><span class="line">​        this.index--</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      next:function()&#123;</span><br><span class="line"></span><br><span class="line">​        this.index++</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;ul&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;li v-for=&quot;it in arr&quot;&gt;</span><br><span class="line"></span><br><span class="line">​        校区:&#123;&#123;it&#125;&#125;</span><br><span class="line"></span><br><span class="line">​      &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        arr:[&quot;北京&quot;,&quot;上海&quot;,&quot;深圳&quot;]</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-on补充"><a href="#v-on补充" class="headerlink" title="v-on补充"></a>v-on补充</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;点击&quot; @click=&quot;doit(123,&#x27;我爱&#x27;)&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;text&quot; @keyup.enter=&quot;say&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        doit:function(p1,p2)&#123;</span><br><span class="line"></span><br><span class="line">​          alert(p1,p2);</span><br><span class="line"></span><br><span class="line">​        &#125;,</span><br><span class="line"></span><br><span class="line">​        say:function()&#123;</span><br><span class="line"></span><br><span class="line">​          alert(&quot;吃了没&quot;);</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>事件绑定的方法写成函数调用的形式，可以传入自定义参数</p>
+<p>定义方法需要定义形参来接受实参</p>
+<p>事件后面跟上.修饰符可以对事件进行限制</p>
+<p>.enter可以限制触发的按键为回车</p>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;修改&quot; @click=&quot;setm&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;text&quot; v-model=&quot;message&quot; @keyup.enter=&quot;getm&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;h2&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    var app=new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        message:&quot;芜湖芜湖&quot;</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        getm:function()&#123;</span><br><span class="line"></span><br><span class="line">​          alert(this.message);</span><br><span class="line"></span><br><span class="line">​        &#125;,</span><br><span class="line"></span><br><span class="line">​        setm:function()&#123;</span><br><span class="line"></span><br><span class="line">​          this.message=&quot;哇哇哇哇&quot;;</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>双向数据绑定</p>
+<h2 id="记事本"><a href="#记事本" class="headerlink" title="记事本"></a>记事本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;!-- 主体区域 --&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;section id=&quot;todoapp&quot;&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;!-- 输入框 --&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;header class=&quot;header&quot;&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;h1&gt;小黑记事本&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;input autofocus=&quot;autofocus&quot; autocomplete=&quot;off&quot; placeholder=&quot;请输入任务&quot;</span><br><span class="line"></span><br><span class="line">​        class=&quot;new-todo&quot; v-model=&quot;addValue&quot; @keyup.enter=&quot;add(addValue)&quot;/&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/header&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;!-- 列表区域 --&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;section class=&quot;main&quot;&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;ul class=&quot;todo-list&quot;&gt;</span><br><span class="line"></span><br><span class="line">​        &lt;li class=&quot;todo&quot; v-for=&quot;(item,index) in list&quot;&gt;</span><br><span class="line"></span><br><span class="line">                  &lt;div class=&quot;view&quot;&gt;</span><br><span class="line"></span><br><span class="line">​          &lt;span class=&quot;index&quot;&gt;&#123;&#123;index+1&#125;&#125;.&lt;/span&gt; &lt;label&gt;&#123;&#123;item&#125;&#125;&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">​          &lt;button class=&quot;destroy&quot; @click=&quot;remove(index)&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">​         &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">​        &lt;/li&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;!-- 统计和清空 --&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;footer class=&quot;footer&quot;&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;span class=&quot;todo-count&quot; v-if=&quot;list.length!=0&quot;&gt; &lt;strong&gt;&#123;&#123;list.length&#125;&#125;&lt;/strong&gt; items left &lt;/span&gt;</span><br><span class="line"></span><br><span class="line">​       &lt;button class=&quot;clear-completed&quot; @click=&quot;clear&quot; v-show=&quot;list.length!=0&quot;&gt;</span><br><span class="line"></span><br><span class="line">​        Clear</span><br><span class="line"></span><br><span class="line">​       &lt;/button&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/footer&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;!-- 底部 --&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;footer class=&quot;info&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;p&gt;</span><br><span class="line"></span><br><span class="line">              &lt;a href=&quot;http://www.itheima.com/&quot;</span><br><span class="line"></span><br><span class="line">​        \&gt;&lt;img src=&quot;./img/black.png&quot; alt=&quot;&quot;</span><br><span class="line"></span><br><span class="line">​       /&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">​      &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;/footer&gt;</span><br><span class="line"></span><br><span class="line">​     &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">          &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​       var app = new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​         el:&quot;#todoapp&quot;,</span><br><span class="line"></span><br><span class="line">​         data:&#123;</span><br><span class="line"></span><br><span class="line">​           list:[&quot;吃饭&quot;,&quot;睡觉&quot;,&quot;学习&quot;],</span><br><span class="line"></span><br><span class="line">​           addValue:&quot;打游戏&quot;</span><br><span class="line"></span><br><span class="line">​         &#125;,</span><br><span class="line"></span><br><span class="line">​         methods:&#123;</span><br><span class="line"></span><br><span class="line">​          add:function(value)&#123;</span><br><span class="line"></span><br><span class="line">​            this.list.push(value)</span><br><span class="line"></span><br><span class="line">​          &#125;,</span><br><span class="line"></span><br><span class="line">​          remove:function(index)&#123;</span><br><span class="line"></span><br><span class="line">​            this.list.splice(index,1)</span><br><span class="line"></span><br><span class="line">​          &#125;,</span><br><span class="line"></span><br><span class="line">​          clear:function()&#123;</span><br><span class="line"></span><br><span class="line">​            this.list=[]</span><br><span class="line"></span><br><span class="line">​          &#125;</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​       &#125;)</span><br><span class="line"></span><br><span class="line">​     &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;input type=&quot;button&quot; value=&quot;get请求&quot; class=&quot;get&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;input type=&quot;button&quot; value=&quot;post请求&quot; class=&quot;post&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    /*</span><br><span class="line"></span><br><span class="line">​      接口1:随机笑话</span><br><span class="line"></span><br><span class="line">​      请求地址:https://autumnfish.cn/api/joke/list</span><br><span class="line"></span><br><span class="line">​      请求方法:get</span><br><span class="line"></span><br><span class="line">​      请求参数:num(笑话条数,数字)</span><br><span class="line"></span><br><span class="line">​      响应内容:随机笑话</span><br><span class="line"></span><br><span class="line">​    */</span><br><span class="line"></span><br><span class="line">​    document.querySelector(&quot;.get&quot;).onclick = function () &#123;</span><br><span class="line"></span><br><span class="line">​      axios.get(&quot;https://autumnfish.cn/api/joke/list?num=4&quot;)</span><br><span class="line"></span><br><span class="line">​      // axios.get(&quot;https://autumnfish.cn/api/joke/qewqeq?num=6&quot;)</span><br><span class="line"></span><br><span class="line">​      .then(function (response) &#123;</span><br><span class="line"></span><br><span class="line">​        console.log(response);</span><br><span class="line"></span><br><span class="line">​       &#125;,function(err)&#123;</span><br><span class="line"></span><br><span class="line">​         console.log(err);</span><br><span class="line"></span><br><span class="line">​       &#125;)</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">​    /*</span><br><span class="line"></span><br><span class="line">​       接口2:用户注册</span><br><span class="line"></span><br><span class="line">​       请求地址:https://autumnfish.cn/api/user/reg</span><br><span class="line"></span><br><span class="line">​       请求方法:post</span><br><span class="line"></span><br><span class="line">​       请求参数:username(用户名,字符串)</span><br><span class="line"></span><br><span class="line">​       响应内容:注册成功或失败</span><br><span class="line"></span><br><span class="line">​     */</span><br><span class="line"></span><br><span class="line">​     document.querySelector(&quot;.post&quot;).onclick = function()&#123;</span><br><span class="line"></span><br><span class="line">​      axios.post(&quot;https://autumnfish.cn/api/user/reg&quot;,&#123;username:&quot;asgdyufgq&quot;&#125;)</span><br><span class="line"></span><br><span class="line">​      .then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">​        console.log(response);</span><br><span class="line"></span><br><span class="line">​      &#125;,function(err)&#123;</span><br><span class="line"></span><br><span class="line">​        console.log(err);</span><br><span class="line"></span><br><span class="line">​      &#125;)</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line"></span><br><span class="line">  axios回调函数中的this已经改变，无法访问到data中的数据</span><br><span class="line"></span><br><span class="line">  把this保存起来，回调函数中直接使用保存的this即可</span><br><span class="line"></span><br><span class="line">  和本地应用最大的区别就是改变了数据来源</span><br><span class="line"></span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;title&gt;axios加vue&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;input type=&quot;button&quot; value=&quot;获取笑话&quot; @click=&quot;getJoke&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p&gt;&#123;&#123;joke&#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">​    /*</span><br><span class="line"></span><br><span class="line">​      接口:随机获取一条笑话</span><br><span class="line"></span><br><span class="line">​      请求地址:https://autumnfish.cn/api/joke</span><br><span class="line"></span><br><span class="line">​      请求方法:get</span><br><span class="line"></span><br><span class="line">​      请求参数:无</span><br><span class="line"></span><br><span class="line">​      响应内容:随机笑话</span><br><span class="line"></span><br><span class="line">​    */</span><br><span class="line"></span><br><span class="line">​    var app = new Vue(&#123;</span><br><span class="line"></span><br><span class="line">​      el:&quot;#app&quot;,</span><br><span class="line"></span><br><span class="line">​      data:&#123;</span><br><span class="line"></span><br><span class="line">​        joke:&quot;笑话&quot;</span><br><span class="line"></span><br><span class="line">​      &#125;,</span><br><span class="line"></span><br><span class="line">​      methods:&#123;</span><br><span class="line"></span><br><span class="line">​        getJoke:function()&#123;</span><br><span class="line"></span><br><span class="line">​          var that = this;</span><br><span class="line"></span><br><span class="line">​          axios.get(&quot;https://autumnfish.cn/api/joke&quot;).then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">​            that.joke = response.data</span><br><span class="line"></span><br><span class="line">​          &#125;,function(err)&#123;&#125;)</span><br><span class="line"></span><br><span class="line">​        &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p></p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/zfbzf.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wxzf.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2021/05/18/vue%E5%9F%BA%E7%A1%80/">vue基础</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2021年05月18日 - 22时04分</p>
+        <p><span>最后更新:</span>2021年05月18日 - 22时06分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/05/18/vue%E5%9F%BA%E7%A1%80/" title="vue基础">https://mingren1314.github.io/2021/05/18/vue%E5%9F%BA%E7%A1%80/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://mingren1314.github.io/2021/05/18/vue%E5%9F%BA%E7%A1%80/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2021/05/18/jdbc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jdbc</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">vue基础入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAvue%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">第一个vue程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#el%E6%8C%82%E8%BD%BD%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">el挂载点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#data%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text">data数据对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E6%8C%87%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">vue指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-text"><span class="toc-number">1.4.1.</span> <span class="toc-text">v-text</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-html"><span class="toc-number">1.4.2.</span> <span class="toc-text">v-html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-on"><span class="toc-number">1.4.3.</span> <span class="toc-text">v-on</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.4.</span> <span class="toc-text">计数器实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-show"><span class="toc-number">1.4.5.</span> <span class="toc-text">v-show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-if"><span class="toc-number">1.4.6.</span> <span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-bind"><span class="toc-number">1.4.7.</span> <span class="toc-text">v-bind</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%88%87%E6%8D%A2%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.4.8.</span> <span class="toc-text">图片切换实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for"><span class="toc-number">1.4.9.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-on%E8%A1%A5%E5%85%85"><span class="toc-number">1.4.10.</span> <span class="toc-text">v-on补充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-model"><span class="toc-number">1.4.11.</span> <span class="toc-text">v-model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E4%BA%8B%E6%9C%AC"><span class="toc-number">1.5.</span> <span class="toc-text">记事本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">网络应用</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2021/05/18/jdbc/" title="下一篇: jdbc">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/05/18/vue%E5%9F%BA%E7%A1%80/">vue基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/18/jdbc/">jdbc</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/scanf%E9%97%AE%E9%A2%98/">scanf问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">自定义数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/">指针面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/">进阶指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%8C%87%E9%92%88/">初级指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E5%88%9D%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">初级数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">进阶数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/javaweb%E5%9F%BA%E7%A1%80/">javaweb基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E5%8F%8D%E5%B0%84/">反射</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/14/%E9%9B%86%E5%90%88/">集合</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 mingr
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
