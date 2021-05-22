@@ -312,6 +312,276 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-指针面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
+      <time datetime="2021-05-14T16:01:02.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/%E6%8C%87%E9%92%88%E9%9D%A2%E8%AF%95%E9%A2%98/">指针面试题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="经典指针面试题"><a href="#经典指针面试题" class="headerlink" title="经典指针面试题"></a>经典指针面试题</h1><h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><h3 id="整型数组"><a href="#整型数组" class="headerlink" title="整型数组"></a>整型数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122456436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-MOU6uYlG-1605066914849)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605007529715.png)]"></p>
+<h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><p><img src="https://img-blog.csdnimg.cn/20201111122504352.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pyam4paJ-1605066914851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605008043640.png)]"></p>
+<p>再看一组strlen（求字符串长度）</p>
+<p><img src="https://img-blog.csdnimg.cn/20201111122510342.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-E5J33lwm-1605066914851)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605011430859.png)]"></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><img src="https://img-blog.csdnimg.cn/20201111122516976.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-wTBMFenC-1605066914853)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605009964304.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020111112252338.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-f0X8Ynb7-1605066914854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605012156675.png)]"></p>
+<p>再看一组strlen</p>
+<p><img src="https://img-blog.csdnimg.cn/20201111122530373.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ig2gJone-1605066914854)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605011215750.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201111122538210.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-j3lOxQZ2-1605066914855)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605054191170.png)]"></p>
+<p>上面的随机值，我们假设a的一个地址，然后找到向后传，但是并不确定\0的位置</p>
+<p><img src="https://img-blog.csdnimg.cn/20201111122545386.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uCyOttKi-1605066914856)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605054545632.png)]"></p>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><p><img src="https://img-blog.csdnimg.cn/20201111122553421.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8KlJx9Uq-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056112101.png)]"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://img-blog.csdnimg.cn/20201111122559687.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ewwo2wbE-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056159163.png)]"></p>
+<h2 id="笔试题"><a href="#笔试题" class="headerlink" title="笔试题"></a>笔试题</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122606800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cmATUzD6-1605066914857)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605056563372.png)]"></p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122613808.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-unMeFZuc-1605066914858)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605057141917.png)]"></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122620450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-6x5vltBt-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058103942.png)]"></p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122626849.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dlXwYQX6-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058283653.png)]"></p>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122635481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JfQIPlJF-1605066914859)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058388903.png)]"></p>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122641372.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1Hj63WSH-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605058927494.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020111112264861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-wBr9ivEM-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605059001774.png)]"></p>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122752885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LS5Lh9kL-1605066914860)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1605059272575.png)]"></p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p><img src="https://img-blog.csdnimg.cn/20201111122802226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="066914860)]"><br>指针到这就结束了，希望可以帮助到大家！</p>
+<hr>
+<p>2020年11月11日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-进阶指针" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/" class="article-date">
+      <time datetime="2021-05-14T16:00:49.000Z" itemprop="datePublished">2021-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/15/%E8%BF%9B%E9%98%B6%E6%8C%87%E9%92%88/">进阶指针</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="进阶指针"><a href="#进阶指针" class="headerlink" title="进阶指针"></a>进阶指针</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">进阶指针--&gt;字符指针</span><br><span class="line">进阶指针--&gt;指针数组</span><br><span class="line">进阶指针--&gt;数组指针</span><br><span class="line">进阶指针--&gt;数组传参和指针传参</span><br><span class="line">进阶指针--&gt;函数指针</span><br><span class="line">进阶指针--&gt;函数指针数组</span><br><span class="line">进阶指针--&gt;指向函数指针数组的指针</span><br><span class="line">进阶指针--&gt;回调函数</span><br><span class="line">进阶指针--&gt;指针和数组面试题的解析</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符指针"><a href="#字符指针" class="headerlink" title="字符指针"></a>字符指针</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><img src="https://img-blog.csdnimg.cn/20201109223203312.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ixpwO5or-1604931815938)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731314126.png)]"></p>
+<p>还有另外一种用法</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223217873.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4QFi8pGp-1604931815939)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731397354.png)]"></p>
+<p>还有第三种写法</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223228423.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ix05Qffc-1604931815940)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731585986.png)]"></p>
+<p>但注意不是把字符串“abcdef”赋给p，而是把字符串首元素a的地址赋给p</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223235367.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-95EMcgGC-1604931815942)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731771090.png)]"></p>
+<p>我们知道p存的是a的地址，那么可不可以更改a呢，如下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223244224.png#pic_center" alt="**[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LaBMb7sO-1604931815943)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604731856495.png)]**"></p>
+<p><strong>注意</strong>：可能vs较老版本可以编译成功并输出Wbcdef，但这是<strong>完全错误</strong>的，这里先不做具体讲解。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>下面我们来看一个程序来更清楚的了解一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223257250.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-mLXRqMIM-1604931815944)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604732349428.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223304483.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-kJmblpVr-1604931815945)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604732400225.png)]"></p>
+<p>为什么会输出haha呢，我们来分析一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223311841.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-NiuxBLQs-1604931815945)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604732743271.png)]"></p>
+<p>再看一下下面这个程序</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223319912.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-0dCXn5Kx-1604931815946)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604732793802.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922333162.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4hPmEp3I-1604931815946)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604732920849.png)]"></p>
+<p>那为什么这个打印hehe呢</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223340723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-U29T1ava-1604931815947)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604733212139.png)]"></p>
+<h2 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h2><p>指针数组其实是数组，指针只是对这个数组的修饰</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223348401.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4IPw5Hc1-1604931815947)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735105724.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223357111.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FHRYYZpF-1604931815948)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735185737.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223405108.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-XXKTGHZz-1604931815948)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735260664.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223411888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-9hsWNATk-1604931815948)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735237048.png)]"></p>
+<h2 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>数组指针是指针，数组只是对他的修饰</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223421382.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-XXKIHZiH-1604931815949)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735534432.png)]"></p>
+<p>下面举个例子</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223430411.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-2J1T4Mlp-1604931815949)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735720648.png)]"></p>
+<p>*<strong>p一定要用括号括起来</strong>，但在定义变量，并不是解引用</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223450138.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FPs7LlIM-1604931815949)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604735762056.png)]"></p>
+<p>下面看一个程序更清晰的了解</p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922345965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-dJ87YOnq-1604931815950)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604736372594.png)]"></p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p><img src="https://img-blog.csdnimg.cn/2020110922350843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-i3IQLKcf-1604931815950)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604736826896.png)]"></p>
+<p>或第二种写法</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223519774.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-e0WVSn30-1604931815950)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604736985431.png)]"></p>
+<p>但事实上，这里用数组指针完全自找麻烦，可以用简单的方法解决</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223529395.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-PRYW6ldq-1604931815951)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604737244095.png)]"></p>
+<p>所以说，数组指针可以这样用，但并不方便使用，事实上在二维数组以上才方便，下面举个例子</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223539879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JcnT3Xbv-1604931815951)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604737888384.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223548121.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-OnRQ8SEb-1604931815952)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604737920615.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223556708.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-w3bjLt9c-1604931815952)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604738037199.png)]"></p>
+<p>下面我们再用数组指针的方法（参数是指针的方式）来看一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223604558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Zs54s3Qc-1604931815953)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604738127400.png)]"></p>
+<p>事实上，上面的<code>*(</code><em>(p+i)+j<code>)</code>可以写成<code>*(</code></em>(p+i)[j]<code>)</code></p>
+<p>解释：</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223621555.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-4T8uvSsj-1604931815954)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604739715574.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223631195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uP34E0Rj-1604931815954)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604739938562.png)]"></p>
+<p>这些输出都是一样的</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="https://img-blog.csdnimg.cn/20201109223638834.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-grCDMhnH-1604931815954)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604740068062.png)]"></p>
+<p>那下面我们看一下下面的代码各自代表什么意思</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223647627.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cz8SmQj0-1604931815955)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604740635886.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922365623.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ov7808wO-1604931815955)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604740660645.png)]"></p>
+<p>下面对parr3画图直观的观察一下</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109223702851.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-tMdNdbKf-1604931815956)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604740760214.png)]"></p>
+<h2 id="数组传参和指针传参"><a href="#数组传参和指针传参" class="headerlink" title="数组传参和指针传参"></a>数组传参和指针传参</h2><p><img src="https://img-blog.csdnimg.cn/20201109224318655.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-IaeHOvgj-1604931815956)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604819420676.png)]"></p>
+<h3 id="一维数组传参"><a href="#一维数组传参" class="headerlink" title="一维数组传参"></a>一维数组传参</h3><p><img src="https://img-blog.csdnimg.cn/20201109224331110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-lu73B2YB-1604931815956)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604819965766.png)]"></p>
+<h3 id="二维数组传参"><a href="#二维数组传参" class="headerlink" title="二维数组传参"></a>二维数组传参</h3><p><img src="https://img-blog.csdnimg.cn/20201109224341931.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-61euktrz-1604931815957)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604821249076.png)]"></p>
+<p>这里注意，二维数组的地址是首元素的地址，就是第一行的地址，也就是一个一维数组的地址</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224356332.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ych9L79Z-1604931815957)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604821433236.png)]"></p>
+<p>所以上面这两种传参方式是错误的</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224412557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-EbaesmYE-1604931815957)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604821695676.png)]"></p>
+<h3 id="一维指针传参"><a href="#一维指针传参" class="headerlink" title="一维指针传参"></a>一维指针传参</h3><p><img src="https://img-blog.csdnimg.cn/20201109224422300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-i2dbyK0c-1604931815958)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604821786420.png)]"></p>
+<p>下面看一个思考问题</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224431875.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-TR8egDGs-1604931815958)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604822017829.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224441224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Ah9tnn8N-1604931815959)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604822630227.png)]"></p>
+<h3 id="二级指针传参"><a href="#二级指针传参" class="headerlink" title="二级指针传参"></a>二级指针传参</h3><p><img src="https://img-blog.csdnimg.cn/20201109224449583.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-r6almZBb-1604931815959)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604822686115.png)]"></p>
+<p>实际上数组也可以</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224501584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-B3QNmc8B-1604931815960)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604823059339.png)]"></p>
+<h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>函数指针是指针，这个指针指向函数，是存放函数地址的指针</p>
+<p>首先我们先定义一个函数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224513377.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-yUx61rcd-1604931815961)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604823823058.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224521888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-YPrL3wA1-1604931815961)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604823900019.png)]"></p>
+<p>注意这里有一个特殊的地方，就是&amp;函数名和函数名都是函数的地址，函数没有首元素，所以这两个地址是相同的</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224534389.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-HEXLO2kB-1604931815961)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604823949162.png)]"></p>
+<p>调用函数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224542354.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-wy09iYhW-1604931815962)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604824099306.png)]"></p>
+<p>但事实上，对于函数指针来说，p前面的<code>*</code>可有可无，因为我们把Add的地址赋给pa了，直接调用Add和pa效果是一样的，pa前的<code>*</code>写几个也都对编译结果没影响</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224553769.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-SGx2CBMx-1604931815962)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604836755653.png)]"></p>
+<p>下面再看一个代码加深理解</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224605624.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-AZ8RzBnU-1604931815962)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604824412554.png)]"></p>
+<p>那么函数的地址应该怎么保存</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224614127.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-kQP9bNOx-1604931815963)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604824938613.png)]"></p>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>下面再看两段有趣的代码</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224623154.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Uy4f5qFd-1604931815963)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604824992370.png)]"></p>
+<p>有兴趣的可以自己研究一下，这里不做讨论</p>
+<h2 id="函数指针数组"><a href="#函数指针数组" class="headerlink" title="函数指针数组"></a>函数指针数组</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>函数指针数组是一个可以<strong>存放多个函数的地址</strong>的数组</p>
+<p>下面用代码来直观了解，首先我们先定义一个函数实现加减乘除</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224640553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-LzRNllRG-1604931815963)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604837304208.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922465125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-WVL8l5Te-1604931815964)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604837351145.png)]"></p>
+<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><h4 id="1-初步了解使用"><a href="#1-初步了解使用" class="headerlink" title="1.初步了解使用"></a>1.初步了解使用</h4><p><img src="https://img-blog.csdnimg.cn/20201109224659566.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZLDB7xSj-1604931815965)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604837491384.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922470843.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cJfKj0l7-1604931815965)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604837680050.png)]"></p>
+<h4 id="2-转移表（计算器）"><a href="#2-转移表（计算器）" class="headerlink" title="2.转移表（计算器）"></a>2.转移表（计算器）</h4><p>首先打印一个菜单</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224716611.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-yaKirxBy-1604931815965)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604838708738.png)]"></p>
+<p>然后定义几个函数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224725568.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-j61BpjNu-1604931815965)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604838654768.png)]"></p>
+<p>然后写程序引用函数，使用函数指针数组</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224732898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-TeN2HPQS-1604931815965)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604838808399.png)]"></p>
+<h2 id="指向函数指针数组的指针"><a href="#指向函数指针数组的指针" class="headerlink" title="指向函数指针数组的指针"></a>指向函数指针数组的指针</h2><p><img src="https://img-blog.csdnimg.cn/20201109224741486.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-8M0drx41-1604931815966)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604843036690.png)]"></p>
+<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3><p><img src="https://img-blog.csdnimg.cn/20201109224749651.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-W1zOtRoe-1604931815967)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604839127417.png)]"></p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><h4 id="1-计算机例子"><a href="#1-计算机例子" class="headerlink" title="1.计算机例子"></a>1.计算机例子</h4><p>以上面计算机的例子来看，先定义一个函数</p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922475961.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-xNtxX6el-1604931815967)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604842783101.png)]"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224807434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-vQBCLNJ7-1604931815968)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604842897489.png)]"></p>
+<h4 id="2-创建两个函数"><a href="#2-创建两个函数" class="headerlink" title="2.创建两个函数"></a>2.创建两个函数</h4><p><img src="https://img-blog.csdnimg.cn/20201109224815935.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-pJbUyAOH-1604931815968)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604887987249.png)]"></p>
+<p>打印后</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224825729.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-R48mYZAk-1604931815968)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604888366162.png)]"></p>
+<h4 id="3-冒号排序函数（qsort）"><a href="#3-冒号排序函数（qsort）" class="headerlink" title="3.冒号排序函数（qsort）"></a>3.冒号排序函数（qsort）</h4><p>我们首先先回忆一下冒号排序，先定义一个函数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224916655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-b9bf82Tf-1604931815968)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604915314899.png)]"></p>
+<p>再调用函数</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224925333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-70ukuLIt-1604931815969)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604915339863.png)]"></p>
+<p>大家对这个冒泡排序可能比较熟悉，但是很显然这种方法有一定的缺陷，就是他只能排序整数型的，那么下面我们用一个新的方法，可以排序各种类型—qsort函数</p>
+<p><strong>下面我们先了解一下这个qsort函数</strong></p>
+<p>首先这个qsort函数需要一个头文件#include&lt;stdlib.h&gt;</p>
+<p>其次它需要四个参数</p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922493430.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-RRqDmg1J-1604931815970)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604920778650.png)]"></p>
+<p>那这四个参数分别是什么意思呢</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224943916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-sGVyI8tT-1604931815970)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604921038073.png)]"></p>
+<p>这里注意，在自己定义的函数参数比较时，要相减返回值</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109224951897.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-rAxZDSwQ-1604931815970)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604923337177.png)]"></p>
+<p>再补充一个知识点</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109225000318.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-rVSB52Nq-1604931815971)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604921296200.png)]"></p>
+<p>了解后我们用qsort函数对上面的冒泡排序代码进行优化</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109225013513.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-qKKbHBHO-1604931815971)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604922117376.png)]"></p>
+<p>qsort的其中一大优势就是它可以比较各种类型，下面比较一下浮点型</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109225020782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-GSJlqhXu-1604931815972)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604922066008.png)]"></p>
+<p>那一个结构体也肯定可以比较，<strong>但是不能用大于小于号</strong>，而且首先我们要确定用结构体中的什么<strong>区别条件</strong>排序</p>
+<p>比如我们先用<strong>年龄</strong>比较</p>
+<p><img src="https://img-blog.csdnimg.cn/2020110922503079.png#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-7FCBloXF-1604931815972)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604922461097.png)]"></p>
+<p>再用名字比较</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109225037818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-bydPfbZw-1604931815972)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604923204657.png)]"></p>
+<p>那如果不知道类型怎么比较</p>
+<p><img src="https://img-blog.csdnimg.cn/20201109225046222.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pbmdyZW5fMTMxNA==,size_16,color_FFFFFF,t_70#pic_center" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-JvDlAggX-1604931815973)(C:\Users\mingren\AppData\Roaming\Typora\typora-user-images\1604924293633.png)]"></p>
+<p>进阶指针的讲解就到这里，希望大家可以结合初级指针学习，掌握指针，指针是c的精华，学完后应多做面试题加深理解和应用，下面的博客中会介绍比较经典的面试题，希望大家可以互相学习指正错误互相进步。</p>
+<p>坚持不懈脚踏实地才能成功，加油！</p>
+<hr>
+<p>2020年11月9日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-初级指针" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
